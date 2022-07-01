@@ -6,30 +6,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c8e69c07-1a9f-4de3-9683-8bf59deaebc3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Ecommerce-Backend/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Debug/net6.0/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Debug/net6.0/Ecommerce-Backend.AssemblyInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Debug/net6.0/Ecommerce-Backend.AssemblyInfoInputs.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Debug/net6.0/Ecommerce-Backend.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Debug/net6.0/Ecommerce-Backend.GlobalUsings.g.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Debug/net6.0/Ecommerce-Backend.csproj.AssemblyReference.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Ecommerce-Backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Ecommerce-Backend/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c9e6255c12cf4dd73867c87a196e414c1c61eac580f6fbfc10229ea9b073fc/WebApplicationServiceCollection.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="2BKhuNtzfbJoYTsDwpFH5STEnFq" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -74,14 +77,30 @@
       <option name="presentableId" value="Default" />
       <updated>1656660913431</updated>
       <workItem from="1656660958038" duration="66000" />
+      <workItem from="1656687232327" duration="9498000" />
     </task>
+    <task id="LOCAL-00001" summary="backed initial commit">
+      <created>1656687327661</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1656687327661</updated>
+    </task>
+    <task id="LOCAL-00002" summary="create and get products">
+      <created>1656696861098</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1656696861098</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -95,6 +114,10 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="backed initial commit" />
+    <MESSAGE value="create and get products" />
+    <option name="LAST_COMMIT_MESSAGE" value="create and get products" />
   </component>
 </project>
