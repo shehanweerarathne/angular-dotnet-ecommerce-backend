@@ -1,45 +1,51 @@
-import { useState,useEffect } from 'react'
+import {useState, useEffect} from 'react'
 import logo from './logo.svg'
+import {BrowserRouter,Routes,Route} from "react-router-dom";
 import './App.css'
+
 
 import Catalog from "./components/catalog/Catalog"
 import {Product} from "./models/product";
-import {Container, CssBaseline, Typography, TypographyVariant} from "@mui/material";
+import {Container, createTheme, CssBaseline, ThemeProvider, Typography, TypographyVariant} from "@mui/material";
 import Header from "./components/header/Header";
-
+import HomePage from "./pages/home/HomePage";
+import ProductDetails from "./components/catalog/ProductDetails";
+import AboutPage from "./pages/about/AboutPage";
+import ContactPage from "./pages/contact/ContactPage";
 
 
 function App() {
-  const [products, setProducts] = useState<Product[]>([]);
-  useEffect(()=>{
-    fetch('https://localhost:7194/api/Product')
-        .then(response=>response.json())
-        .then(data=>setProducts(data))
-  },[])
-  const addProduct = () => {
-    setProducts(prevState=>[...prevState,{
-        id:prevState.length +1,
-        name: 'product' + (prevState.length +1),
-        price:(prevState.length*100) +200.00,
-        description:'',
-        brand:'',
-        type:'',
-        quantityInStock:0,
-        pictureUrl:'https://picsum.photos/200'
-    }])
-  }
+    const [darkMode,setDarkMode] = useState(false);
+    const palletType = darkMode ? 'dark' : 'light';
+    const theme = createTheme({
+        palette: {
+            mode: palletType,
+            background:{
+                default: palletType === 'light' ? '#eaeaea': '#121212'
+            }
+        }
+    })
+    const handleThemeChange = () => {
+      setDarkMode(!darkMode);
+    }
 
-  return (
-      <div>
-          <CssBaseline/>
-       <Header/>
-          <Container>
-              <Catalog products={products} addProduct={addProduct}/>
-          </Container>
+    return (
+        <ThemeProvider theme={theme}>
+            <CssBaseline/>
+            <Header darkMode={darkMode} handleThemeChange={handleThemeChange}/>
+            <Container>
+                <Routes>
+                    <Route path={'/'} element={<HomePage/>}/>
+                    <Route path={'/catalog'} element={<Catalog/>}/>
+                    <Route path={'/catalog/:id'} element={<ProductDetails/>}/>
+                    <Route path={'/about'} element={<AboutPage/>}/>
+                    <Route path={'/contact'} element={<ContactPage/>}/>
+                </Routes>
+            </Container>
 
 
-      </div>
-  )
+        </ThemeProvider>
+    )
 }
 
 export default App

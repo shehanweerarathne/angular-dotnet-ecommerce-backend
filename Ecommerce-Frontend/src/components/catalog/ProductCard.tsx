@@ -3,7 +3,7 @@ import {
     Avatar, Button,
     Card,
     CardActions,
-    CardContent,
+    CardContent, CardHeader,
     CardMedia,
     ListItem,
     ListItemAvatar,
@@ -18,31 +18,32 @@ const ProductCard = ({product}:Props) => {
     return (
         <div>
             <Card>
+                <CardHeader
+                    avatar={<Avatar sx={{bgcolor:'secondary.main'}}>{product.name.charAt(0).toUpperCase()}</Avatar>}
+                    title={product.name}
+                    titleTypographyProps={{
+                        sx:{fontWeight:'bold',color:'primary.main'}
+                    }}
+
+                />
                 <CardMedia
-                    component="img"
-                    height="140"
+                    sx={{height:140,backgroundSize:'container', bgcolor:'primary.light'}}
                     image={product.pictureUrl}
-                    alt={product.name}
+                    title={product.name}
                 />
                 <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
-                        {product.name}
+                    <Typography gutterBottom color={'secondary'} variant="h5">
+                        Rs.{product.price.toFixed(2)}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                        {product.description}
+                        {product.brand} / {product.type}
                     </Typography>
                 </CardContent>
                 <CardActions>
-                    <Button size="small">{product.price}</Button>
-                    <Button size="small">Learn More</Button>
+                    <Button size="small">Add to Cart</Button>
+                    <Button size="small">View</Button>
                 </CardActions>
             </Card>
-            <ListItem key={product.id}>
-                <ListItemAvatar>
-                    <Avatar src={product.pictureUrl}/>
-                </ListItemAvatar>
-                <ListItemText>{product.name} - {product.price}</ListItemText>
-            </ListItem>
         </div>
     );
 };
