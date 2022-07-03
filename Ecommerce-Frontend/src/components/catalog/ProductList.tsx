@@ -1,5 +1,5 @@
 import React from 'react';
-import {Avatar, List, ListItem, ListItemAvatar, ListItemText} from "@mui/material";
+import {Avatar, Grid, List, ListItem, ListItemAvatar, ListItemText} from "@mui/material";
 import {Product} from "../../models/product";
 import ProductCard from "./ProductCard";
 
@@ -10,12 +10,14 @@ interface Props{
 const ProductList = ({products}:Props) => {
     return (
         <>
-            <List>
+            <Grid container spacing={4}>
                 {products.map((product) =>(
-                    // <ListItem key={product.id}>{product.name} - {product.price}</ListItem>
-                    <ProductCard key={product.id} product={product}/>
+                    <Grid key={product.id} item xs={3}>
+                        <ProductCard  product={product}/>
+                    </Grid>
+
                 ))}
-            </List>
+            </Grid>
         </>
     );
 };

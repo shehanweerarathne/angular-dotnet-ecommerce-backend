@@ -6,38 +6,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c8e69c07-1a9f-4de3-9683-8bf59deaebc3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/public/images/hero1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/public/images/hero2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/public/images/hero3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/public/images/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/public/images/placeholder.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/public/images/products/boot-ang1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/public/images/products/boot-ang2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/public/images/products/boot-core1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/public/images/products/boot-core2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/public/images/products/boot-redis1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/public/images/products/glove-code1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/public/images/products/glove-code2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/public/images/products/glove-react1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/public/images/products/glove-react2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/public/images/products/hat-core1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/public/images/products/hat-react1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/public/images/products/hat-react2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/public/images/products/sb-ang1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/public/images/products/sb-ang2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/public/images/products/sb-core1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/public/images/products/sb-core2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/public/images/products/sb-react1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/public/images/products/sb-ts1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/components/catalog/Catalog.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/components/catalog/ProductCard.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/components/catalog/ProductList.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/components/header/Header.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Ecommerce-Backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Ecommerce-Backend/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/src/models/product.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/models/product.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/src/components/catalog/ProductCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/components/catalog/ProductCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/src/components/catalog/ProductList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/components/catalog/ProductList.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,6 +86,7 @@
       <workItem from="1656771241484" duration="720000" />
       <workItem from="1656779887532" duration="222000" />
       <workItem from="1656831667073" duration="1207000" />
+      <workItem from="1656840714641" duration="1375000" />
     </task>
     <task id="LOCAL-00001" summary="backed initial commit">
       <created>1656687327661</created>

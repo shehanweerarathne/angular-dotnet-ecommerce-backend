@@ -4,7 +4,8 @@ import './App.css'
 
 import Catalog from "./components/catalog/Catalog"
 import {Product} from "./models/product";
-import {Typography, TypographyVariant} from "@mui/material";
+import {Container, CssBaseline, Typography, TypographyVariant} from "@mui/material";
+import Header from "./components/header/Header";
 
 
 
@@ -30,8 +31,12 @@ function App() {
 
   return (
       <div>
-       <Typography variant="h1" component="div" gutterBottom>Ecommerce</Typography>
-          <Catalog products={products} addProduct={addProduct}/>
+          <CssBaseline/>
+       <Header/>
+          <Container>
+              <Catalog products={products} addProduct={addProduct}/>
+          </Container>
+
 
       </div>
   )
