@@ -1,4 +1,5 @@
 using Ecommerce_Backend.Data;
+using Ecommerce_Backend.Middleware;
 using Ecommerce_Backend.Persistence;
 using Ecommerce_Backend.Repositories;
 using Ecommerce_Backend.Services;
@@ -42,6 +43,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseCors("EnableCORS");
+app.UseMiddleware<ExceptionMiddleware>();
 app.UseAuthorization();
 
 app.MapControllers();

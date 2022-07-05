@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "dFOS0xYm0FdsQwg6AWsl+tVoWuq5/e5ofdVzOFRxGadjucwSZoo74hyesTmeV/T8FXJ7XKKt95/2z2qrMAGt4A==",
+  "dgSpecHash": "9sl40lvoY8WxWpOHntwkseY4LlehTupcGb4bMSQY5I5TbV6N/E0F1o0Nhd5J3eldQciIziKWaAgp0zxUq9WvvQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\chami\\Projects\\dotnet-react-redux-ecommerce\\Ecommerce-Backend\\Ecommerce-Backend.csproj",
   "expectedPackageFiles": [
@@ -35,6 +35,8 @@
     "C:\\Users\\chami\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\chami\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\chami\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\chami\\.nuget\\packages\\nlog\\5.0.1\\nlog.5.0.1.nupkg.sha512",
+    "C:\\Users\\chami\\.nuget\\packages\\nlog.extensions.logging\\5.0.1\\nlog.extensions.logging.5.0.1.nupkg.sha512",
     "C:\\Users\\chami\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
     "C:\\Users\\chami\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
     "C:\\Users\\chami\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",

@@ -6,7 +6,7 @@ namespace Ecommerce_Backend.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-public class ProductController:ControllerBase
+public class ProductController:BaseApiController
 {
     private readonly IProductService _productService;
 
@@ -26,6 +26,7 @@ public class ProductController:ControllerBase
     public async Task<IActionResult> GetProductById(Guid id)
     {
         var product = await _productService.GetProductById(id);
+        if (product == null) return NotFound();
         return Ok(product);
     }
 

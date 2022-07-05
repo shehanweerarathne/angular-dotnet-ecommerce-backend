@@ -10,9 +10,9 @@ interface Props{
 const ProductList = ({products}:Props) => {
     return (
         <>
-            <Grid container spacing={4}>
+            <Grid alignItems={'center'} container spacing={4}>
                 {products.map((product) =>(
-                    <Grid key={product.id} item xs={3}>
+                    <Grid  key={product.id} item xs={3}>
                         <ProductCard  product={product}/>
                     </Grid>
 

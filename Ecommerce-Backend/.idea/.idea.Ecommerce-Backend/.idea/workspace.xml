@@ -6,11 +6,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c8e69c07-1a9f-4de3-9683-8bf59deaebc3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/components/header/Header.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Controllers/BaseApiController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Controllers/BuggyController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Middleware/ExceptionMiddleware.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Models/OutputModels/ErrorResultJson.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Models/StatusCode.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Debug/net6.0/NLog.Extensions.Logging.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bin/Debug/net6.0/NLog.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Ecommerce-Backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Ecommerce-Backend/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/ProductController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/ProductController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ecommerce-Backend.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Ecommerce-Backend.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/ProductService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/ProductService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/Ecommerce-Backend.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/Ecommerce-Backend.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/Ecommerce-Backend.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/Ecommerce-Backend.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/Ecommerce-Backend.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/Ecommerce-Backend.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/Ecommerce-Backend.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/Ecommerce-Backend.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/Ecommerce-Backend.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/Ecommerce-Backend.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/Ecommerce-Backend.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/Ecommerce-Backend.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/Ecommerce-Backend.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/Ecommerce-Backend.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/Ecommerce-Backend.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/Ecommerce-Backend.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/Ecommerce-Backend.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/Ecommerce-Backend.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/ref/Ecommerce-Backend.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/ref/Ecommerce-Backend.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/refint/Ecommerce-Backend.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/refint/Ecommerce-Backend.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Ecommerce-Backend.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Ecommerce-Backend.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/staticwebassets.pack.sentinel" beforeDir="false" afterPath="$PROJECT_DIR$/obj/staticwebassets.pack.sentinel" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/src/components/catalog/ProductCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/components/catalog/ProductCard.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/src/components/catalog/ProductList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/components/catalog/ProductList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/src/components/header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/components/header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/src/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/main.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,6 +115,10 @@
       <workItem from="1656779887532" duration="222000" />
       <workItem from="1656831667073" duration="1207000" />
       <workItem from="1656840714641" duration="1375000" />
+      <workItem from="1656919428273" duration="637000" />
+      <workItem from="1656942542963" duration="1087000" />
+      <workItem from="1656949231649" duration="2149000" />
+      <workItem from="1656991648408" duration="1795000" />
     </task>
     <task id="LOCAL-00001" summary="backed initial commit">
       <created>1656687327661</created>

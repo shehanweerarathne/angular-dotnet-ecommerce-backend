@@ -5,8 +5,7 @@ import './App.css'
 
 
 import Catalog from "./components/catalog/Catalog"
-import {Product} from "./models/product";
-import {Container, createTheme, CssBaseline, ThemeProvider, Typography, TypographyVariant} from "@mui/material";
+import {Container, createTheme, CssBaseline, ThemeProvider} from "@mui/material";
 import Header from "./components/header/Header";
 import HomePage from "./pages/home/HomePage";
 import ProductDetails from "./components/catalog/ProductDetails";

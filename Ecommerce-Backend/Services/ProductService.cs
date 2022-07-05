@@ -22,10 +22,7 @@ public class ProductService:IProductService
     public async Task<Product> GetProductById(Guid id)
     {
         var existingProduct =  await _productRepository.GetProductById(id);
-        if (existingProduct == null)
-        {
-            throw new Exception();
-        }
+        
 
         return existingProduct;
     }
