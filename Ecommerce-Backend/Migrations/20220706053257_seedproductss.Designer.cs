@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Ecommerce_Backend.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20220701160810_seedNewProducts")]
-    partial class seedNewProducts
+    [Migration("20220706053257_seedproductss")]
+    partial class seedproductss
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,6 +23,45 @@ namespace Ecommerce_Backend.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
+
+            modelBuilder.Entity("Ecommerce_Backend.Models.Basket", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("BuyerId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Baskets");
+                });
+
+            modelBuilder.Entity("Ecommerce_Backend.Models.BasketItem", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("BasketId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BasketId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("BasketItems");
+                });
 
             modelBuilder.Entity("Ecommerce_Backend.Models.Product", b =>
                 {
@@ -63,7 +102,7 @@ namespace Ecommerce_Backend.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("eff9d5d1-d050-4221-bf9c-33e47ea79ad7"),
+                            Id = new Guid("88e43579-145f-4229-8090-2630d9f66add"),
                             Brand = "Angular",
                             Description = "Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.",
                             Name = "Green Angular Board 3000",
@@ -74,7 +113,7 @@ namespace Ecommerce_Backend.Migrations
                         },
                         new
                         {
-                            Id = new Guid("c89091c0-729a-4bcb-ad35-696be17aca46"),
+                            Id = new Guid("6becd2b6-8c61-40b7-9059-5ba2e5b2842e"),
                             Brand = "NetCore",
                             Description = "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
                             Name = "Core Board Speed Rush 3",
@@ -85,7 +124,7 @@ namespace Ecommerce_Backend.Migrations
                         },
                         new
                         {
-                            Id = new Guid("c5398f19-e2c6-446d-8e4c-7fb169a7f27e"),
+                            Id = new Guid("284d67e9-96d0-4db3-9e3c-04f1d21a1041"),
                             Brand = "NetCore",
                             Description = "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
                             Name = "Net Core Super Board",
@@ -96,7 +135,7 @@ namespace Ecommerce_Backend.Migrations
                         },
                         new
                         {
-                            Id = new Guid("94dfa068-854f-4f1c-b553-ca4b093d8b6f"),
+                            Id = new Guid("97ec7205-7a07-42df-aef0-20c8b851819c"),
                             Brand = "React",
                             Description = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
                             Name = "React Board Super Whizzy Fast",
@@ -107,7 +146,7 @@ namespace Ecommerce_Backend.Migrations
                         },
                         new
                         {
-                            Id = new Guid("2577eb86-a054-4ccc-a4bf-624ea48eadce"),
+                            Id = new Guid("0fd52d3c-dedb-46d3-903f-163bb0a65cea"),
                             Brand = "TypeScript",
                             Description = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
                             Name = "Typescript Entry Board",
@@ -118,7 +157,7 @@ namespace Ecommerce_Backend.Migrations
                         },
                         new
                         {
-                            Id = new Guid("efffcfcc-37d8-4ccc-9375-4a5a3ba41d2b"),
+                            Id = new Guid("e709f1ab-85a4-4e64-a374-d0f2ae53171c"),
                             Brand = "NetCore",
                             Description = "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
                             Name = "Core Blue Hat",
@@ -129,7 +168,7 @@ namespace Ecommerce_Backend.Migrations
                         },
                         new
                         {
-                            Id = new Guid("bc2adbc0-4aa7-4858-b0f5-6d08c95f907a"),
+                            Id = new Guid("0dea6451-33d9-41fb-baad-51c71f6d306d"),
                             Brand = "React",
                             Description = "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
                             Name = "Green React Woolen Hat",
@@ -140,7 +179,7 @@ namespace Ecommerce_Backend.Migrations
                         },
                         new
                         {
-                            Id = new Guid("2412bde0-cdcb-47cf-b7b0-cf42f009ccb2"),
+                            Id = new Guid("4cb5ace1-2bd6-455d-ae9c-4f55849cfa92"),
                             Brand = "React",
                             Description = "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
                             Name = "Purple React Woolen Hat",
@@ -151,7 +190,7 @@ namespace Ecommerce_Backend.Migrations
                         },
                         new
                         {
-                            Id = new Guid("55e19c03-88fb-4a1e-bc70-be5da045aef0"),
+                            Id = new Guid("5b4724ed-ff5f-4c6a-8aea-754023082fd4"),
                             Brand = "VS Code",
                             Description = "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
                             Name = "Blue Code Gloves",
@@ -162,7 +201,7 @@ namespace Ecommerce_Backend.Migrations
                         },
                         new
                         {
-                            Id = new Guid("0d2defd6-c2ee-45c0-89c2-47681f16f05a"),
+                            Id = new Guid("6ae6a2ef-59dc-4367-b857-2eb76b7ee0dc"),
                             Brand = "VS Code",
                             Description = "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
                             Name = "Green Code Gloves",
@@ -173,7 +212,7 @@ namespace Ecommerce_Backend.Migrations
                         },
                         new
                         {
-                            Id = new Guid("319ed0e4-82df-4f19-9b26-4e8fe1d69965"),
+                            Id = new Guid("b2d1ef62-706f-423a-aad1-8b3a35ad09f2"),
                             Brand = "React",
                             Description = "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
                             Name = "Purple React Gloves",
@@ -184,7 +223,7 @@ namespace Ecommerce_Backend.Migrations
                         },
                         new
                         {
-                            Id = new Guid("88499075-ffa8-416b-8340-70e4224dadac"),
+                            Id = new Guid("8c6acbbd-d15d-4f69-b8d9-1b8315391946"),
                             Brand = "React",
                             Description = "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
                             Name = "Green React Gloves",
@@ -195,7 +234,7 @@ namespace Ecommerce_Backend.Migrations
                         },
                         new
                         {
-                            Id = new Guid("58f150d6-962f-4364-bb91-dc222534c2e1"),
+                            Id = new Guid("912f4b2c-15c7-42ca-b7c0-c91f081ec938"),
                             Brand = "Redis",
                             Description = "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
                             Name = "Redis Red Boots",
@@ -206,7 +245,7 @@ namespace Ecommerce_Backend.Migrations
                         },
                         new
                         {
-                            Id = new Guid("8c478a3c-4f01-4b27-8292-2c8d72d1d5bc"),
+                            Id = new Guid("a160b9bd-013f-4425-a22d-a0d4fd2df653"),
                             Brand = "NetCore",
                             Description = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
                             Name = "Core Red Boots",
@@ -217,7 +256,7 @@ namespace Ecommerce_Backend.Migrations
                         },
                         new
                         {
-                            Id = new Guid("162b5f03-6269-4b6b-8272-9c998fd302d9"),
+                            Id = new Guid("429d717c-dfac-4de9-8606-efa30930a590"),
                             Brand = "NetCore",
                             Description = "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
                             Name = "Core Purple Boots",
@@ -228,7 +267,7 @@ namespace Ecommerce_Backend.Migrations
                         },
                         new
                         {
-                            Id = new Guid("1f747416-6145-4b8f-a7cc-192690540a24"),
+                            Id = new Guid("dcac678f-fa21-418f-8ea3-df2bad0ba5ac"),
                             Brand = "Angular",
                             Description = "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
                             Name = "Angular Purple Boots",
@@ -239,7 +278,7 @@ namespace Ecommerce_Backend.Migrations
                         },
                         new
                         {
-                            Id = new Guid("46f04a5d-2f52-485e-8394-b8e53c783d4c"),
+                            Id = new Guid("21657799-731c-4f92-8db1-4553329b3d4b"),
                             Brand = "Angular",
                             Description = "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
                             Name = "Angular Blue Boots",
@@ -248,6 +287,30 @@ namespace Ecommerce_Backend.Migrations
                             QuantityInStock = 100,
                             Type = "Boots"
                         });
+                });
+
+            modelBuilder.Entity("Ecommerce_Backend.Models.BasketItem", b =>
+                {
+                    b.HasOne("Ecommerce_Backend.Models.Basket", "Basket")
+                        .WithMany("Items")
+                        .HasForeignKey("BasketId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Ecommerce_Backend.Models.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Basket");
+
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("Ecommerce_Backend.Models.Basket", b =>
+                {
+                    b.Navigation("Items");
                 });
 #pragma warning restore 612, 618
         }

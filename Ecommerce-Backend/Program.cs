@@ -6,13 +6,15 @@ using Ecommerce_Backend.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+/*
 builder.Services.AddCors(option =>
 {
     option.AddPolicy("EnableCORS", builder =>
     {
-        builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+        builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod().AllowCredentials();
     });
 });
+*/
 
 
 // Add services to the container.
@@ -42,7 +44,10 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseCors("EnableCORS");
+app.UseCors(opt =>
+{
+    opt.AllowAnyHeader().AllowAnyMethod().AllowCredentials().WithOrigins("http://localhost:3000");
+});
 app.UseMiddleware<ExceptionMiddleware>();
 app.UseAuthorization();
 
