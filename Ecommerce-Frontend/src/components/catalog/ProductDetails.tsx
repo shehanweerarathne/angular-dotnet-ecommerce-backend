@@ -16,12 +16,12 @@ import NotFound from "../errors/NotFound";
 import LoadingComponent from "../errors/LoadingComponent";
 import {LoadingButton} from "@material-ui/lab";
 import {Product} from "../../models/product";
-import axios from "axios";
-import {useStoreContext} from "../../context/StoreContext";
-import {BasketItem} from "../../models/basket";
+import {useAppDispatch, useAppSelector} from "../../store/configureStore";
+import {removeItem, setBasket} from "../../pages/basket/basketSlice";
 
 const ProductDetails = () => {
-    const {basket, setBasket, removeItem} = useStoreContext();
+    const {basket} = useAppSelector(state => state.basket);
+    const dispatch = useAppDispatch();
     const {id} = useParams<{ id: string }>();
     const [product, setProduct] = useState<Product | null>(null);
     const [loading, setLoading] = useState(true);
@@ -43,19 +43,19 @@ const ProductDetails = () => {
         setSubmitting(true);
         if (!item) {
             agent.Basket.addItem(product?.id!, 1)
-                .then(basket => setBasket(basket))
+                .then(basket => dispatch(setBasket(basket)))
                 .catch(error => console.log(error))
                 .finally(() => setSubmitting(false));
         } else if (quantity > item.quantity) {
             const updatedQuantity = item ? quantity - item.quantity : quantity;
             agent.Basket.addItem(product?.id!, updatedQuantity)
-                .then(basket => setBasket(basket))
+                .then(basket => dispatch(setBasket(basket)))
                 .catch(error => console.log(error))
                 .finally(() => setSubmitting(false));
         } else {
             const updatedQuantity = item.quantity - quantity;
             agent.Basket.removeItem(product?.id!, updatedQuantity)
-                .then(() => removeItem(product?.id!, updatedQuantity))
+                .then(() => dispatch(removeItem({productId:product?.id!, quantity: updatedQuantity})))
                 .catch(error => console.log(error))
                 .finally(() => setSubmitting(false));
         }

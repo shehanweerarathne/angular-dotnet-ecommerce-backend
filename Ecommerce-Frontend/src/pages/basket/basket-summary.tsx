@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
 import { TableContainer, Paper, Table, TableBody, TableRow, TableCell } from "@mui/material";
-import {currencyFormat} from "../../util/util";
-import {useStoreContext} from "../../context/StoreContext";
+
+import {useAppSelector} from "../../store/configureStore";
 
 const BasketSummary = () => {
 
 
-    const {basket} = useStoreContext();
+    const {basket} = useAppSelector(state => state.basket)
     const [deliveryFee,setDeliveryFee] = useState(0)
 
 

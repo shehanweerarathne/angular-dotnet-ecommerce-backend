@@ -6,13 +6,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c8e69c07-1a9f-4de3-9683-8bf59deaebc3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/pages/contact/counterReducer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/pages/basket/basketSlice.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/pages/contact/counterSlice.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/store/configureStore.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Ecommerce-Backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Ecommerce-Backend/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/staticwebassets.pack.sentinel" beforeDir="false" afterPath="$PROJECT_DIR$/obj/staticwebassets.pack.sentinel" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/src/components/catalog/ProductDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/components/catalog/ProductDetails.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/src/pages/basket/basket-summary.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/pages/basket/basket-summary.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/src/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/main.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/src/pages/contact/ContactPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/pages/contact/ContactPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/src/pages/contact/counterReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/pages/contact/counterReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +115,8 @@
       <workItem from="1657123867274" duration="652000" />
       <workItem from="1657168785896" duration="399000" />
       <workItem from="1657169240503" duration="950000" />
-      <workItem from="1657279308753" duration="1358000" />
+      <workItem from="1657279308753" duration="1810000" />
+      <workItem from="1657296403620" duration="1219000" />
     </task>
     <task id="LOCAL-00001" summary="backed initial commit">
       <created>1656687327661</created>
@@ -133,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657112161547</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="cart functions completed">
+      <created>1657283774512</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1657283774512</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -159,6 +172,7 @@
     <MESSAGE value="backed initial commit" />
     <MESSAGE value="create and get products" />
     <MESSAGE value="handle cart with cookies" />
-    <option name="LAST_COMMIT_MESSAGE" value="handle cart with cookies" />
+    <MESSAGE value="cart functions completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="cart functions completed" />
   </component>
 </project>

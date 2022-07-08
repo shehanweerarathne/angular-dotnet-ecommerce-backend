@@ -1,10 +1,10 @@
-import React, {useState} from 'react';
-import {Badge, AppBar, IconButton, List, ListItem, Toolbar, Typography, Box, Switch, Drawer, Button, Divider, ListItemButton, ListItemText
+import React from 'react';
+import {Badge, AppBar, IconButton, List, ListItem, Toolbar, Typography, Box, Switch, Drawer, Divider, ListItemButton, ListItemText
 } from "@mui/material";
 import {Link, NavLink} from "react-router-dom";
 import {ShoppingCart} from "@mui/icons-material";
 import MenuIcon from '@mui/icons-material/Menu';
-import {useStoreContext} from "../../context/StoreContext";
+import {useAppSelector} from "../../store/configureStore";
 
 
 interface Props{
@@ -30,7 +30,7 @@ const navStyles={
 const drawerWidth = 240;
 const navItems = ['Home', 'About', 'Contact'];
 const Header = ({darkMode,handleThemeChange,window}:Props) => {
-    const {basket} = useStoreContext();
+    const {basket} = useAppSelector(state => state.basket)
 
 
     let itemCount = 0;

@@ -21,40 +21,30 @@ import agent from "../../API/Agent";
 import {Add, Delete, Remove} from "@mui/icons-material";
 import {LoadingButton} from "@material-ui/lab";
 import {Box,  Grid} from "@material-ui/core";
-import {useStoreContext} from "../../context/StoreContext";
 import BasketSummary from "./basket-summary";
 import {Link} from "react-router-dom";
+import {useAppDispatch, useAppSelector} from "../../store/configureStore";
+import {removeItem, setBasket} from "./basketSlice";
 axios.defaults.withCredentials = true;
 const BasketPage = () => {
-    const {basket,setBasket,removeItem} = useStoreContext();
+    const {basket} = useAppSelector(state => state.basket);
+    const dispatch = useAppDispatch();
     const [status, setStatus] = useState({
         loading: false,
         name: ''
     });
-    // const  [basket, setBasket] = useState<Basket | null>(null);
-    // // const { basket, setBasket, removeItem } = useStoreContext();
-    // const [loading,setLoading] = useState(true);
-    // useEffect(()=>{
-    //     agent.Basket.get()
-    //         .then(basket=>setBasket(basket))
-    //         .catch(error=>console.log(error))
-    //         .finally(()=>setLoading(false));
-    // },[]);
-    //
-    //
-    //
-    // if(loading) return <LoadingComponent message={'Loading basket...'}/>
+
     const handleAddItem = (productId: string, name: string) => {
         setStatus({ loading: true, name });
         agent.Basket.addItem(productId)
-            .then(basket => setBasket(basket))
+            .then(basket => dispatch(setBasket(basket)))
             .catch(error => console.log(error))
             .finally(() => setStatus({ loading: false, name: '' }))
     }
     const handleRemoveItem = (productId: string, quantity = 1, name: string) => {
         setStatus({ loading: true, name });
         agent.Basket.removeItem(productId, quantity)
-            .then(() => removeItem(productId, quantity))
+            .then(() => dispatch(removeItem({productId, quantity})))
             .catch(error => console.log(error))
             .finally(() => setStatus({ loading: false, name: '' }));
     }

@@ -7,6 +7,8 @@ import {LoadingButton} from "@material-ui/lab";
 import axios from "axios";
 import {Cookie} from "@mui/icons-material";
 import {useStoreContext} from "../../context/StoreContext";
+import {useAppDispatch} from "../../store/configureStore";
+import {setBasket} from "../../pages/basket/basketSlice";
 
 
 interface Props{
@@ -16,7 +18,8 @@ const ProductCard = ({product}:Props) => {
 
 
     const [loading,setLoading] = useState(false);
-    const {setBasket} = useStoreContext();
+    const dispatch = useAppDispatch();
+
 
     const  handleAddItem = async (productId:string) => {
       setLoading(true);
@@ -27,7 +30,7 @@ const ProductCard = ({product}:Props) => {
       // document.cookie =  "buyerId"+"="+response.data.buyerId+"; expires="+date.toUTCString()+"; path=/";
       //   setLoading(false)
       agent.Basket.addItem(productId)
-          .then(basket=>setBasket(basket))
+          .then(basket=>dispatch(setBasket(basket)))
           .catch(error=>console.log(error))
           .finally(()=>setLoading(false));
     }
