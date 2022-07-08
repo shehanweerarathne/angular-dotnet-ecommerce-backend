@@ -1,5 +1,15 @@
-import React,{useState,useEffect} from 'react';
-import {Divider, Grid, Table, TableBody, TableCell, TableContainer, TableRow, TextField, Typography} from "@mui/material";
+import React, {useState, useEffect} from 'react';
+import {
+    Divider,
+    Grid,
+    Table,
+    TableBody,
+    TableCell,
+    TableContainer,
+    TableRow,
+    TextField,
+    Typography
+} from "@mui/material";
 import {useParams} from "react-router-dom";
 import agent from "../../API/Agent";
 import NotFound from "../errors/NotFound";
@@ -12,7 +22,7 @@ import {BasketItem} from "../../models/basket";
 
 const ProductDetails = () => {
     const {basket, setBasket, removeItem} = useStoreContext();
-    const {id} = useParams<{id: string}>();
+    const {id} = useParams<{ id: string }>();
     const [product, setProduct] = useState<Product | null>(null);
     const [loading, setLoading] = useState(true);
     const [quantity, setQuantity] = useState(0);
@@ -27,13 +37,16 @@ const ProductDetails = () => {
             .catch(error => console.log(error))
             .finally(() => setLoading(false))
 
-}, [id, item]);
+    }, [id, item]);
 
-
-
-    function handleUpdateCart() {
+    const handleUpdateCart = () => {
         setSubmitting(true);
-        if (!item || quantity > item.quantity) {
+        if (!item) {
+            agent.Basket.addItem(product?.id!, 1)
+                .then(basket => setBasket(basket))
+                .catch(error => console.log(error))
+                .finally(() => setSubmitting(false));
+        } else if (quantity > item.quantity) {
             const updatedQuantity = item ? quantity - item.quantity : quantity;
             agent.Basket.addItem(product?.id!, updatedQuantity)
                 .then(basket => setBasket(basket))
@@ -47,25 +60,25 @@ const ProductDetails = () => {
                 .finally(() => setSubmitting(false));
         }
     }
-    function handleInputChange(event: any) {
+    const handleInputChange = (event: any) => {
         if (event.target.value > 0) {
             setQuantity(parseInt(event.target.value));
         }
     }
 
 
-    if (loading) return <LoadingComponent message='Loading product...' />
+    if (loading) return <LoadingComponent message='Loading product...'/>
 
-    if (!product) return <NotFound />
+    if (!product) return <NotFound/>
 
     return (
         <Grid container spacing={6}>
             <Grid item xs={6}>
-                <img src={product.pictureUrl} alt={product.name} style={{width: '100%'}} />
+                <img src={product.pictureUrl} alt={product.name} style={{width: '100%'}}/>
             </Grid>
             <Grid item xs={6}>
                 <Typography variant='h3'>{product.name}</Typography>
-                <Divider sx={{mb: 2}} />
+                <Divider sx={{mb: 2}}/>
                 <Typography variant='h4' color='secondary'>${(product.price / 100).toFixed(2)}</Typography>
                 <TableContainer>
                     <Table>

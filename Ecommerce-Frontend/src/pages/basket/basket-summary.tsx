@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { TableContainer, Paper, Table, TableBody, TableRow, TableCell } from "@mui/material";
 import {currencyFormat} from "../../util/util";
 import {useStoreContext} from "../../context/StoreContext";
@@ -7,14 +7,17 @@ const BasketSummary = () => {
 
 
     const {basket} = useStoreContext();
+    const [deliveryFee,setDeliveryFee] = useState(0)
+
 
 
     let subTotal = 0;
-    let deliveryFee = 1000;
+
     if(basket){
         subTotal = basket.items.reduce((sum, item) => sum + (item.quantity*item.price), 0)
+
     }
-console.log(subTotal)
+
 
     return (
         <>
