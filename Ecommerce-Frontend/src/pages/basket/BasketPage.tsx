@@ -17,7 +17,6 @@ import { useState } from "react";
 
 
 import axios from "axios";
-import agent from "../../API/Agent";
 import {Add, Delete, Remove} from "@mui/icons-material";
 import {LoadingButton} from "@material-ui/lab";
 import {Box,  Grid} from "@material-ui/core";
@@ -27,12 +26,11 @@ import {useAppDispatch, useAppSelector} from "../../store/configureStore";
 import {addBasketItemAsync, removeBasketItemAsync, setBasket} from "./basketSlice";
 axios.defaults.withCredentials = true;
 const BasketPage = () => {
-    const {basket} = useAppSelector(state => state.basket);
+    const { basket, status } = useAppSelector(state => state.basket);
     const dispatch = useAppDispatch();
 
-
-
     if (!basket) return <Typography variant='h3'>Your basket is empty</Typography>
+
     return (
         <>
             <TableContainer component={Paper}>
@@ -42,15 +40,15 @@ const BasketPage = () => {
                             <TableCell>Product</TableCell>
                             <TableCell align="right">Price</TableCell>
                             <TableCell align="center">Quantity</TableCell>
-                            <TableCell align="center">Add/Remove</TableCell>
                             <TableCell align="right">Subtotal</TableCell>
-                            <TableCell align="right">Delete</TableCell>
+                            <TableCell align="right"></TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {basket.items.map(item=>(
+                        {basket.items.map(item => (
                             <TableRow
                                 key={item.productId}
+                                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                             >
                                 <TableCell component="th" scope="row">
                                     <Box display='flex' alignItems='center'>
@@ -58,31 +56,29 @@ const BasketPage = () => {
                                         <span>{item.name}</span>
                                     </Box>
                                 </TableCell>
-                                <TableCell align={'center'}>{item.price}</TableCell>
-                                <TableCell align={'center'}>{item.quantity}</TableCell>
-
+                                <TableCell align="right">${(item.price / 100).toFixed(2)}</TableCell>
                                 <TableCell align="center">
                                     <LoadingButton
-                                        loading={status===('pendingRemoveItem' + item.productId)}
-                                        onClick={() => dispatch(removeBasketItemAsync({productId:item.productId,quantity:1}))}
+                                        loading={status === 'pendingRemoveItem' + item.productId + 'rem'}
+                                        onClick={() => dispatch(removeBasketItemAsync({productId: item.productId, quantity: 1, name: 'rem'}))}
                                         color='error'
                                     >
                                         <Remove />
                                     </LoadingButton>
                                     {item.quantity}
                                     <LoadingButton
-                                        loading={status ===('pendingAddItem'+item.productId)}
-                                        onClick={() => dispatch(addBasketItemAsync({productId:item.productId}))}
+                                        loading={status === 'pendingAddItem' + item.productId}
+                                        onClick={() => dispatch(addBasketItemAsync({productId: item.productId}))}
                                         color='secondary'
                                     >
                                         <Add />
                                     </LoadingButton>
                                 </TableCell>
-                                <TableCell align={'right'}>{(item.price * item.quantity).toFixed(2)}</TableCell>
+                                <TableCell align="right">${((item.price / 100) * item.quantity).toFixed(2)}</TableCell>
                                 <TableCell align="right">
                                     <LoadingButton
-                                        loading={status===('pendingRemoveItem'+item.productId)}
-                                        onClick={() => dispatch(removeBasketItemAsync({productId:item.productId,quantity:item.quantity}))}
+                                        loading={status === 'pendingRemoveItem' + item.productId + 'del'}
+                                        onClick={() => dispatch(removeBasketItemAsync({productId: item.productId, quantity: item.quantity, name: 'del'}))}
                                         color='error'
                                     >
                                         <Delete />
@@ -109,8 +105,8 @@ const BasketPage = () => {
                 </Grid>
             </Grid>
         </>
-    );
-    
+    )
+
 
 };
 

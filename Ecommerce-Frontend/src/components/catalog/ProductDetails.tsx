@@ -1,42 +1,31 @@
 import React, {useState, useEffect} from 'react';
-import {
-    Divider,
-    Grid,
-    Table,
-    TableBody,
-    TableCell,
-    TableContainer,
-    TableRow,
-    TextField,
-    Typography
-} from "@mui/material";
+import {Divider, Grid, Table, TableBody, TableCell, TableContainer, TableRow, TextField, Typography} from "@mui/material";
 import {useParams} from "react-router-dom";
-import agent from "../../API/Agent";
 import NotFound from "../errors/NotFound";
 import LoadingComponent from "../errors/LoadingComponent";
 import {LoadingButton} from "@material-ui/lab";
 import {Product} from "../../models/product";
 import {useAppDispatch, useAppSelector} from "../../store/configureStore";
 import {addBasketItemAsync, removeBasketItemAsync, setBasket} from "../../pages/basket/basketSlice";
+import {fetchProductAsync,productSelectors} from "./catalogSlice";
 
 const ProductDetails = () => {
     const {basket,status} = useAppSelector(state => state.basket);
     const dispatch = useAppDispatch();
     const {id} = useParams<{ id: string }>();
-    const [product, setProduct] = useState<Product | null>(null);
-    const [loading, setLoading] = useState(true);
     const [quantity, setQuantity] = useState(0);
+    // @ts-ignore
+    const product = useAppSelector(state => productSelectors.selectById(state, id));
+    const {status: productStatus} = useAppSelector(state => state.catalog);
     const item = basket?.items.find(i => i.productId === product?.id);
 
 
     useEffect(() => {
         if (item) setQuantity(item.quantity);
-        agent.Catalog.details(id)
-            .then(response => setProduct(response))
-            .catch(error => console.log(error))
-            .finally(() => setLoading(false))
-
-    }, [id, item]);
+        if (!product) if (id != null) {
+            dispatch(fetchProductAsync(id));
+        }
+    }, [id, item, dispatch, product]);
 
     const handleUpdateCart = () => {
         if (!item) {
@@ -56,16 +45,16 @@ const ProductDetails = () => {
     }
 
 
-    if (loading) return <LoadingComponent message='Loading product...'/>
+    if (productStatus.includes('pending')) return <LoadingComponent message='Loading product...'/>
 
     if (!product) return <NotFound/>
 
     return (
         <Grid container spacing={6}>
-            <Grid item xs={6}>
+            <Grid item xs={12} md={6}>
                 <img src={product.pictureUrl} alt={product.name} style={{width: '100%'}}/>
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} md={6}>
                 <Typography variant='h3'>{product.name}</Typography>
                 <Divider sx={{mb: 2}}/>
                 <Typography variant='h4' color='secondary'>${(product.price / 100).toFixed(2)}</Typography>
@@ -109,7 +98,7 @@ const ProductDetails = () => {
                     <Grid item xs={6}>
                         <LoadingButton
                             disabled={item?.quantity === quantity}
-                            loading={status.includes('pendingRemoveItem' + item?.productId)}
+                            loading={status.includes('pending')}
                             onClick={handleUpdateCart}
                             sx={{height: '55px'}}
                             color='primary'

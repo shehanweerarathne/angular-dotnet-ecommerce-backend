@@ -6,7 +6,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c8e69c07-1a9f-4de3-9683-8bf59deaebc3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/components/catalog/catalogSlice.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Ecommerce-Backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Ecommerce-Backend/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/BasketController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/BasketController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/src/components/catalog/Catalog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/components/catalog/Catalog.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/src/components/catalog/ProductDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/components/catalog/ProductDetails.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/src/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/main.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/src/pages/basket/BasketPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/pages/basket/BasketPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/src/pages/basket/basketSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/pages/basket/basketSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/src/store/configureStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/store/configureStore.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,6 +115,7 @@
       <workItem from="1657279308753" duration="1810000" />
       <workItem from="1657296403620" duration="1237000" />
       <workItem from="1657303720785" duration="8000" />
+      <workItem from="1657350203923" duration="2242000" />
     </task>
     <task id="LOCAL-00001" summary="backed initial commit">
       <created>1656687327661</created>
