@@ -7,8 +7,8 @@ import {LoadingButton} from "@material-ui/lab";
 import axios from "axios";
 import {Cookie} from "@mui/icons-material";
 import {useStoreContext} from "../../context/StoreContext";
-import {useAppDispatch} from "../../store/configureStore";
-import {setBasket} from "../../pages/basket/basketSlice";
+import {useAppDispatch, useAppSelector} from "../../store/configureStore";
+import {addBasketItemAsync, setBasket} from "../../pages/basket/basketSlice";
 
 
 interface Props{
@@ -17,23 +17,17 @@ interface Props{
 const ProductCard = ({product}:Props) => {
 
 
-    const [loading,setLoading] = useState(false);
+const {status} = useAppSelector(state=>state.basket)
     const dispatch = useAppDispatch();
 
 
-    const  handleAddItem = async (productId:string) => {
-      setLoading(true);
-      // const response = await axios.post(`basket?productId=${productId}&quantity=${1}`,{},{ withCredentials: true });
-      //   const date = new Date();
-      //   date.setTime(date.getTime() + (7 * 24 * 60 * 60 * 1000));
-      // console.log(response);
-      // document.cookie =  "buyerId"+"="+response.data.buyerId+"; expires="+date.toUTCString()+"; path=/";
-      //   setLoading(false)
-      agent.Basket.addItem(productId)
-          .then(basket=>dispatch(setBasket(basket)))
-          .catch(error=>console.log(error))
-          .finally(()=>setLoading(false));
-    }
+    // const  handleAddItem = async (productId:string) => {
+    //   setLoading(true);
+    //   agent.Basket.addItem(productId)
+    //       .then(basket=>dispatch(setBasket(basket)))
+    //       .catch(error=>console.log(error))
+    //       .finally(()=>setLoading(false));
+    // }
 
 
     return (
@@ -61,7 +55,7 @@ const ProductCard = ({product}:Props) => {
                     </Typography>
                 </CardContent>
                 <CardActions>
-                    <LoadingButton loading={loading} onClick={()=>handleAddItem(product.id)} size="small">Add to Cart</LoadingButton>
+                    <LoadingButton loading={status.includes('pendingAddItem' + product.id)} onClick={()=>dispatch(addBasketItemAsync({productId:product.id})) } size="small">Add to Cart</LoadingButton>
                     <Button component={Link} to={`/catalog/${product.id}`} size="small">View</Button>
                 </CardActions>
             </Card>
