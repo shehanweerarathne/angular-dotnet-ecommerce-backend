@@ -29,4 +29,9 @@
       <Folder Include="Models\InputModels" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Compile Remove="Models\QueryResult.cs" />
+      <Compile Remove="Models\FilterModel.cs" />
+    </ItemGroup>
+
 </Project>

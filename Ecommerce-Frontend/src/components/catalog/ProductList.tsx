@@ -12,7 +12,7 @@ const ProductList = ({products}:Props) => {
         <>
             <Grid alignItems={'center'} container spacing={3}>
                 {products.map((product) =>(
-                    <Grid  key={product.id} item xs={12} sm={6} md={4} lg={3} xl={2.4}>
+                    <Grid  key={product.id} item xs={12} sm={6} md={4} lg={4} xl={4}>
                         <ProductCard  product={product}/>
                     </Grid>
 

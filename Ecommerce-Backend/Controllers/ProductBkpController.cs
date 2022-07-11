@@ -6,11 +6,11 @@ namespace Ecommerce_Backend.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-public class ProductController:BaseApiController
+public class ProductBkpController:BaseApiController
 {
     private readonly IProductService _productService;
 
-    public ProductController(IProductService productService)
+    public ProductBkpController(IProductService productService)
     {
         _productService = productService;
     }

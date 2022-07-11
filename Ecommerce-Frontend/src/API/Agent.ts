@@ -44,8 +44,9 @@ const requests = {
 }
 
 const Catalog = {
-    list: () => requests.get('Product'),
-    details: (id: string | undefined) => requests.get(`Product/${id}`)
+    list: () => requests.get('Products'),
+    details: (id: string | undefined) => requests.get(`Products/${id}`),
+    fetchFilters:()=>requests.get('products/filters')
 }
 
 const TestErrors = {
