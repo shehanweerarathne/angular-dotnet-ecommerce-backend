@@ -6,36 +6,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c8e69c07-1a9f-4de3-9683-8bf59deaebc3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Controllers/ProductsController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DTOs/RequestHelpers/FilterInput.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DTOs/RequestHelpers/MetaData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DTOs/RequestHelpers/PagedList.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DTOs/RequestHelpers/PaginationParams.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DTOs/RequestHelpers/ProductParams.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Extentions/HttpExtentions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Extentions/IQueryObject.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Extentions/IQueryableExtensions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Extentions/ProductExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/components/app-pagination/AppPagination.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/components/catalog/ProductSearch.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/components/checkbox-buttons/checkboxButtons.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/components/radio-button-group/RadioButtonGroup.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/models/Pagination.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Ecommerce-Backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Ecommerce-Backend/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/ProductController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/ProductBkpController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ecommerce-Backend.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Ecommerce-Backend.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/appsettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/Ecommerce-Backend.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/Ecommerce-Backend.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/Ecommerce-Backend.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/Ecommerce-Backend.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/Ecommerce-Backend.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/Ecommerce-Backend.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/appsettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/Ecommerce-Backend.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/Ecommerce-Backend.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/Ecommerce-Backend.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/Ecommerce-Backend.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/ref/Ecommerce-Backend.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/ref/Ecommerce-Backend.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/refint/Ecommerce-Backend.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/refint/Ecommerce-Backend.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/staticwebassets.pack.sentinel" beforeDir="false" afterPath="$PROJECT_DIR$/obj/staticwebassets.pack.sentinel" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/src/API/Agent.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/API/Agent.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/src/components/catalog/Catalog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/components/catalog/Catalog.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/src/components/catalog/ProductList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/components/catalog/ProductList.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/src/components/catalog/catalogSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/components/catalog/catalogSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/src/models/product.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/models/product.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3ea95343b9387b73062a9b61b7538f826c54ce3529632b4472ba4494044d23/AsyncTaskMethodBuilderT.cs" root0="FORCE_HIGHLIGHTING" />
@@ -134,7 +135,11 @@
       <workItem from="1657350203923" duration="2242000" />
       <workItem from="1657437532062" duration="10740000" />
       <workItem from="1657456571481" duration="3816000" />
-      <workItem from="1657520265788" duration="2000000" />
+      <workItem from="1657520265788" duration="2637000" />
+      <workItem from="1657544120756" duration="16000" />
+      <workItem from="1657549975141" duration="1332000" />
+      <workItem from="1657558253660" duration="1731000" />
+      <workItem from="1657632527799" duration="764000" />
     </task>
     <task id="LOCAL-00001" summary="backed initial commit">
       <created>1656687327661</created>
@@ -164,7 +169,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657283774512</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Pagination updated">
+      <created>1657527596224</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1657527596224</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,6 +203,7 @@
     <MESSAGE value="create and get products" />
     <MESSAGE value="handle cart with cookies" />
     <MESSAGE value="cart functions completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="cart functions completed" />
+    <MESSAGE value="Pagination updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pagination updated" />
   </component>
 </project>

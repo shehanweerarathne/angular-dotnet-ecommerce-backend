@@ -4,31 +4,25 @@ import LoadingComponent from "../errors/LoadingComponent";
 import agent from "../../API/Agent";
 import {Product} from "../../models/product";
 import {useAppDispatch,useAppSelector} from "../../store/configureStore";
-import {fetchFilters, fetchProductsAsync, productSelectors} from "./catalogSlice";
-import {
-    Checkbox,
-    FormControl,
-    FormControlLabel,
-    FormGroup,
-    FormLabel,
-    Grid, Pagination,
-    Paper,
-    Radio,
-    RadioGroup, Stack,
-    TextField, Typography
+import {fetchFilters, fetchProductsAsync, productSelectors, setProductParams} from "./catalogSlice";
+import {Checkbox, FormControl, FormGroup, FormLabel, Grid, Pagination, Paper, Radio, RadioGroup, Stack, TextField, Typography
 } from "@mui/material";
 import {Box} from "@mui/system";
+import ProductSearch from "./ProductSearch";
+import RadioButtonGroup from "../radio-button-group/RadioButtonGroup";
+import CheckboxButtons from "../checkbox-buttons/checkboxButtons";
+import AppPagination from "../app-pagination/AppPagination";
 
 const sortOptions = [
     {value:'name', lable: 'Alphabetical'},
-    {value:'priceDec', lable: 'Price - High to Low'},
+    {value:'priceDesc', lable: 'Price - High to Low'},
     {value:'price', lable: 'Price - Low to High'}
 ]
 
 const Catalog = () => {
 
     const products = useAppSelector(productSelectors.selectAll);
-    const {productsLoaded, status,filtersLoaded,brands,types} = useAppSelector(state => state.catalog);
+    const {productsLoaded, status,filtersLoaded,brands,types,productParams,metaData} = useAppSelector(state => state.catalog);
     const dispatch = useAppDispatch();
 
     useEffect(() => {
@@ -38,33 +32,21 @@ const Catalog = () => {
         if(!filtersLoaded) dispatch(fetchFilters());
     }, [ dispatch,filtersLoaded])
 
-    if (status.includes('pending')) return <LoadingComponent message='Loading products...' />
+    if (status.includes('pending') || !metaData) return <LoadingComponent message='Loading products...' />
     return (
         <Grid container spacing={4}>
             <Grid item xs={12} md={3}>
                 <Paper sx={{mb:2}}>
-                    <TextField label={'Search Products'} variant={'outlined'} fullWidth={true}/>
+                    <ProductSearch/>
                 </Paper>
                 <Paper sx={{mb:2,p:2}}>
-                    <FormControl>
-                        <RadioGroup>
-                            {sortOptions.map(({value,lable})=>(
-                                <FormControlLabel value={value} control={<Radio />} label={lable} />
-                            ))}
-                        </RadioGroup>
-                    </FormControl>
+<RadioButtonGroup options={sortOptions} onChange={(e)=>dispatch(setProductParams({orderBy:e.target.value}))} selectedValue={productParams.orderBy}/>
                 </Paper>
                 <Paper sx={{mb:2,p:2}}>
-                    <FormGroup>
-                        {brands.map(brand=>(<FormControlLabel control={<Checkbox defaultChecked />} label={brand} key={brand} />))}
-
-                    </FormGroup>
+                    <CheckboxButtons items={brands} checked={productParams.brands} onChange={(items:string[])=> dispatch(setProductParams({brands:items}))}/>
                 </Paper>
                 <Paper sx={{mb:2,p:2}}>
-                    <FormGroup>
-                        {types.map(type=>(<FormControlLabel control={<Checkbox defaultChecked />} label={type} key={type} />))}
-
-                    </FormGroup>
+                    <CheckboxButtons items={types} checked={productParams.types} onChange={(items:string[])=> dispatch(setProductParams({types:items}))}/>
                 </Paper>
             </Grid>
             <Grid item xs={12} md={9}>
@@ -73,10 +55,8 @@ const Catalog = () => {
             <Grid item={true} xs={12} md={3}/>
             <Grid item={true}  md={9}>
                 <Stack spacing={2} justifyContent={'center'}>
-                    <Box display={'flex'} justifyContent={'center'} alignItems={'center'}>
-                        <Typography display={{xs:'none'}}>Displaying 1-6 of 20 items</Typography>
-                        <Pagination count={10} color="secondary" page={2} />
-                    </Box>
+                    <AppPagination metaData={metaData} onPageChange={(page:number)=>dispatch(setProductParams({pageNumber:page}))}/>
+
 
                 </Stack>
             </Grid>
