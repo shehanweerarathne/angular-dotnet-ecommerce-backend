@@ -5,26 +5,7 @@
     <projectFile profileName="IIS Express">Ecommerce-Backend.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c8e69c07-1a9f-4de3-9683-8bf59deaebc3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/components/app-pagination/AppPagination.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/components/catalog/ProductSearch.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/components/checkbox-buttons/checkboxButtons.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/components/radio-button-group/RadioButtonGroup.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/models/Pagination.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Ecommerce-Backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Ecommerce-Backend/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/Ecommerce-Backend.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/Ecommerce-Backend.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/Ecommerce-Backend.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/Ecommerce-Backend.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/Ecommerce-Backend.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/Ecommerce-Backend.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/Ecommerce-Backend.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/Ecommerce-Backend.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/staticwebassets.pack.sentinel" beforeDir="false" afterPath="$PROJECT_DIR$/obj/staticwebassets.pack.sentinel" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/src/API/Agent.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/API/Agent.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/src/components/catalog/Catalog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/components/catalog/Catalog.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/src/components/catalog/catalogSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/components/catalog/catalogSlice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/src/models/product.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/models/product.ts" afterDir="false" />
-    </list>
+    <list default="true" id="c8e69c07-1a9f-4de3-9683-8bf59deaebc3" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -139,7 +120,7 @@
       <workItem from="1657544120756" duration="16000" />
       <workItem from="1657549975141" duration="1332000" />
       <workItem from="1657558253660" duration="1731000" />
-      <workItem from="1657632527799" duration="764000" />
+      <workItem from="1657632527799" duration="863000" />
     </task>
     <task id="LOCAL-00001" summary="backed initial commit">
       <created>1656687327661</created>
@@ -176,7 +157,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657527596224</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="pagination updated">
+      <created>1657642924806</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1657642924807</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -204,6 +192,7 @@
     <MESSAGE value="handle cart with cookies" />
     <MESSAGE value="cart functions completed" />
     <MESSAGE value="Pagination updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pagination updated" />
+    <MESSAGE value="pagination updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="pagination updated" />
   </component>
 </project>

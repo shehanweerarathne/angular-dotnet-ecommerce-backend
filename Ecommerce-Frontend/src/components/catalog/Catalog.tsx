@@ -4,7 +4,7 @@ import LoadingComponent from "../errors/LoadingComponent";
 import agent from "../../API/Agent";
 import {Product} from "../../models/product";
 import {useAppDispatch,useAppSelector} from "../../store/configureStore";
-import {fetchFilters, fetchProductsAsync, productSelectors, setProductParams} from "./catalogSlice";
+import {fetchFilters, fetchProductsAsync, productSelectors, setProductParams,setPageNumber} from "./catalogSlice";
 import {Checkbox, FormControl, FormGroup, FormLabel, Grid, Pagination, Paper, Radio, RadioGroup, Stack, TextField, Typography
 } from "@mui/material";
 import {Box} from "@mui/system";
@@ -32,9 +32,9 @@ const Catalog = () => {
         if(!filtersLoaded) dispatch(fetchFilters());
     }, [ dispatch,filtersLoaded])
 
-    if (status.includes('pending') || !metaData) return <LoadingComponent message='Loading products...' />
+if (!filtersLoaded) return <LoadingComponent message='Loading products...' />
     return (
-        <Grid container spacing={4}>
+        <Grid container columnSpacing={4} >
             <Grid item xs={12} md={3}>
                 <Paper sx={{mb:2}}>
                     <ProductSearch/>
@@ -53,12 +53,13 @@ const Catalog = () => {
                 <ProductList products={products} />
             </Grid>
             <Grid item={true} xs={12} md={3}/>
-            <Grid item={true}  md={9}>
+            <Grid item={true}  md={9} sx={{mb:2}}>
+                {metaData &&
                 <Stack spacing={2} justifyContent={'center'}>
-                    <AppPagination metaData={metaData} onPageChange={(page:number)=>dispatch(setProductParams({pageNumber:page}))}/>
+                    <AppPagination metaData={metaData} onPageChange={(page:number)=>dispatch(setPageNumber({pageNumber:page}))}/>
 
 
-                </Stack>
+                </Stack>}
             </Grid>
         </Grid>
     );
