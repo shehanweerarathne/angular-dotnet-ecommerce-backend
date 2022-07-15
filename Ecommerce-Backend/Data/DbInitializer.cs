@@ -1,26 +1,50 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Ecommerce_Backend.Models;
+﻿using Ecommerce_Backend.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace Ecommerce_Backend.Data;
 
 public class DbInitializer
 {
-    private readonly ModelBuilder modelBuilder;
-
-    public DbInitializer(ModelBuilder modelBuilder)
-    {
-        this.modelBuilder = modelBuilder;
-    }
-
-    public void Seed()
-    {
-        modelBuilder.Entity<Product>().HasData(
-            new Product
+    public static async Task Initialize(DataContext context, UserManager<User> userManager)
+        {
+            if (!userManager.Users.Any())
+            {
+                var user = new User
                 {
-                    Id = Guid.NewGuid(),
+                    UserName = "bob",
+                    Email = "bob@test.com"
+                };
+
+                await userManager.CreateAsync(user, "Pa$$w0rd");
+                await userManager.AddToRoleAsync(user, "Member");
+
+                var admin = new User
+                {
+                    UserName = "admin",
+                    Email = "admin@test.com"
+                };
+
+                await userManager.CreateAsync(admin, "Pa$$w0rd");
+                await userManager.AddToRolesAsync(admin, new[] {"Member", "Admin"});
+            }
+
+            if (context.Products.Any()) return;
+
+            var products = new List<Product>
+            {
+                new Product
+                {
+                    Name = "Angular Speedster Board 2000",
+                    Description =
+                        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
+                    Price = 20000,
+                    PictureUrl = "/images/products/sb-ang1.png",
+                    Brand = "Angular",
+                    Type = "Boards",
+                    QuantityInStock = 100
+                },
+                new Product
+                {
                     Name = "Green Angular Board 3000",
                     Description = "Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.",
                     Price = 15000,
@@ -31,7 +55,6 @@ public class DbInitializer
                 },
                 new Product
                 {
-                    Id = Guid.NewGuid(),
                     Name = "Core Board Speed Rush 3",
                     Description =
                         "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
@@ -43,7 +66,6 @@ public class DbInitializer
                 },
                 new Product
                 {
-                    Id = Guid.NewGuid(),
                     Name = "Net Core Super Board",
                     Description =
                         "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
@@ -55,7 +77,6 @@ public class DbInitializer
                 },
                 new Product
                 {
-                    Id = Guid.NewGuid(),
                     Name = "React Board Super Whizzy Fast",
                     Description =
                         "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
@@ -67,7 +88,6 @@ public class DbInitializer
                 },
                 new Product
                 {
-                    Id = Guid.NewGuid(),
                     Name = "Typescript Entry Board",
                     Description =
                         "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
@@ -79,7 +99,6 @@ public class DbInitializer
                 },
                 new Product
                 {
-                    Id = Guid.NewGuid(),
                     Name = "Core Blue Hat",
                     Description =
                         "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
@@ -91,7 +110,6 @@ public class DbInitializer
                 },
                 new Product
                 {
-                    Id = Guid.NewGuid(),
                     Name = "Green React Woolen Hat",
                     Description =
                         "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
@@ -103,7 +121,6 @@ public class DbInitializer
                 },
                 new Product
                 {
-                    Id = Guid.NewGuid(),
                     Name = "Purple React Woolen Hat",
                     Description =
                         "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
@@ -115,7 +132,6 @@ public class DbInitializer
                 },
                 new Product
                 {
-                    Id = Guid.NewGuid(),
                     Name = "Blue Code Gloves",
                     Description =
                         "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
@@ -127,7 +143,6 @@ public class DbInitializer
                 },
                 new Product
                 {
-                    Id = Guid.NewGuid(),
                     Name = "Green Code Gloves",
                     Description =
                         "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
@@ -139,7 +154,6 @@ public class DbInitializer
                 },
                 new Product
                 {
-                    Id = Guid.NewGuid(),
                     Name = "Purple React Gloves",
                     Description =
                         "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
@@ -151,7 +165,6 @@ public class DbInitializer
                 },
                 new Product
                 {
-                    Id = Guid.NewGuid(),
                     Name = "Green React Gloves",
                     Description =
                         "Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
@@ -163,7 +176,6 @@ public class DbInitializer
                 },
                 new Product
                 {
-                    Id = Guid.NewGuid(),
                     Name = "Redis Red Boots",
                     Description =
                         "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
@@ -175,7 +187,6 @@ public class DbInitializer
                 },
                 new Product
                 {
-                    Id = Guid.NewGuid(),
                     Name = "Core Red Boots",
                     Description =
                         "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.",
@@ -187,7 +198,6 @@ public class DbInitializer
                 },
                 new Product
                 {
-                    Id = Guid.NewGuid(),
                     Name = "Core Purple Boots",
                     Description =
                         "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
@@ -199,7 +209,6 @@ public class DbInitializer
                 },
                 new Product
                 {
-                    Id = Guid.NewGuid(),
                     Name = "Angular Purple Boots",
                     Description = "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.",
                     Price = 15000,
@@ -210,7 +219,6 @@ public class DbInitializer
                 },
                 new Product
                 {
-                    Id = Guid.NewGuid(),
                     Name = "Angular Blue Boots",
                     Description =
                         "Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.",
@@ -219,7 +227,12 @@ public class DbInitializer
                     Brand = "Angular",
                     Type = "Boots",
                     QuantityInStock = 100
-                }
-            );
-    }
+                },
+            };
+            foreach (var product in products)
+            {
+                context.Products.Add(product);
+            }
+            context.SaveChanges();
+        }
 }
