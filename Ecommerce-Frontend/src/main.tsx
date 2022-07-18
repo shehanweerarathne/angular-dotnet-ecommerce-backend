@@ -6,6 +6,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import {Provider} from "react-redux";
 import {store} from "./store/configureStore";
+import Footer from "./components/footer/Footer";
 
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -15,7 +16,6 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
                 <App/>
             </Provider>
         </BrowserRouter>
-
     </React.StrictMode>
 )
 

@@ -6,49 +6,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c8e69c07-1a9f-4de3-9683-8bf59deaebc3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Controllers/AccountController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DTOs/LoginDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DTOs/RegisterDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DTOs/UserDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Migrations/20220713180338_addIdentity.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Migrations/20220713180338_addIdentity.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Models/User.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Services/ITokenService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Services/TokenService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bin/Debug/net6.0/Microsoft.AspNetCore.Authentication.OpenIdConnect.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/components/footer/Footer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/components/footer/Footer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/components/react-hook-form/react-hook-form.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/models/user.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/pages/Account/Login.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/pages/Account/Register.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/pages/Account/accountSlice.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Ecommerce-Backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Ecommerce-Backend/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/DataContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/DataContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/DbInitializer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/DbInitializer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ecommerce-Backend.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Ecommerce-Backend.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Migrations/20220706053257_seedproductss.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Migrations/20220713163630_dataAddr.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Migrations/20220706053257_seedproductss.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Migrations/20220713163630_dataAddr.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Migrations/DataContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Migrations/DataContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/Ecommerce-Backend.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/Ecommerce-Backend.deps.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/Ecommerce-Backend.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/Ecommerce-Backend.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/Ecommerce-Backend.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/Ecommerce-Backend.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/Microsoft.IdentityModel.JsonWebTokens.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/Microsoft.IdentityModel.JsonWebTokens.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/Microsoft.IdentityModel.Logging.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/Microsoft.IdentityModel.Logging.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/Microsoft.IdentityModel.Protocols.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/Microsoft.IdentityModel.Tokens.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/Microsoft.IdentityModel.Tokens.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/System.IdentityModel.Tokens.Jwt.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/System.IdentityModel.Tokens.Jwt.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/Ecommerce-Backend.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/Ecommerce-Backend.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/Ecommerce-Backend.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/Ecommerce-Backend.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/Ecommerce-Backend.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/Ecommerce-Backend.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/Ecommerce-Backend.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/Ecommerce-Backend.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/Ecommerce-Backend.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/Ecommerce-Backend.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/Ecommerce-Backend.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/Ecommerce-Backend.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/ref/Ecommerce-Backend.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/ref/Ecommerce-Backend.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/refint/Ecommerce-Backend.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/refint/Ecommerce-Backend.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Ecommerce-Backend.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Ecommerce-Backend.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.restore.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/staticwebassets.pack.sentinel" beforeDir="false" afterPath="$PROJECT_DIR$/obj/staticwebassets.pack.sentinel" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/src/API/Agent.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/API/Agent.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/src/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/main.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/src/store/configureStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/store/configureStore.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,7 +142,11 @@
       <workItem from="1657777098985" duration="1254000" />
       <workItem from="1657778716695" duration="3368000" />
       <workItem from="1657850507545" duration="34000" />
-      <workItem from="1657868784950" duration="4654000" />
+      <workItem from="1657868784950" duration="4777000" />
+      <workItem from="1657876173971" duration="673000" />
+      <workItem from="1657897101192" duration="241000" />
+      <workItem from="1657897871049" duration="925000" />
+      <workItem from="1658123120466" duration="647000" />
     </task>
     <task id="LOCAL-00001" summary="backed initial commit">
       <created>1656687327661</created>
@@ -213,7 +190,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657642924807</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Authentication implemented in server">
+      <created>1657875040396</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1657875040397</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -242,6 +226,7 @@
     <MESSAGE value="cart functions completed" />
     <MESSAGE value="Pagination updated" />
     <MESSAGE value="pagination updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="pagination updated" />
+    <MESSAGE value="Authentication implemented in server" />
+    <option name="LAST_COMMIT_MESSAGE" value="Authentication implemented in server" />
   </component>
 </project>

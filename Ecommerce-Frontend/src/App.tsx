@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react'
+import React, {useState, useEffect} from 'react'
 import {Routes, Route} from "react-router-dom";
 import './App.css'
 import Catalog from './components/catalog/Catalog'
@@ -21,6 +21,9 @@ import agent from "./API/Agent";
 import CheckoutPage from "./pages/checkout/CheckoutPage";
 import {useAppDispatch} from "./store/configureStore";
 import {setBasket} from "./pages/basket/basketSlice";
+import Login from "./pages/Account/Login";
+import Register from "./pages/Account/Register";
+import Footer from "./components/footer/Footer";
 
 
 function App() {
@@ -70,10 +73,13 @@ function App() {
                     <Route path={'/contact'} element={<ContactPage/>}/>
                     <Route path={'/basket'} element={<BasketPage/>}/>
                     <Route path={'/checkout'} element={<CheckoutPage/>}/>
-                    <Route element={<NotFound/>}/>
+                    <Route path={'/login'} element={<Login/>}/>
+                    <Route path={'/register'} element={<Register/>}/>
+                    <Route path={'*'} element={<NotFound/>}/>
                 </Routes>
             </Container>
 
+            {/*<Footer/>*/}
 
         </ThemeProvider>
     )
