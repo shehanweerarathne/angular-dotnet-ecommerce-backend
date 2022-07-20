@@ -4,39 +4,32 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import {useForm, Resolver, FieldValues} from 'react-hook-form';
 import agent from "../../API/Agent";
 import {LoadingButton} from "@material-ui/lab";
+import {useNavigate} from "react-router-dom";
+import {useAppDispatch} from "../../store/configureStore";
+import {signInUser} from "./accountSlice";
+import axios from "axios";
 
-
-const Copyright = (props:any) => {
-    return(
-        <Typography variant="body2" color="text.secondary" align="center" {...props}>
-            {'Copyright © '}
-            <Link color="inherit" href="https://mui.com/">
-                Your Website
-            </Link>{' '}
-            {new Date().getFullYear()}
-            {'.'}
-        </Typography>
-    );
-
-}
-
-const theme = createTheme();
 
 const Login = () => {
+    const navigate = useNavigate();
+    const dispatch = useAppDispatch();
     const {register,handleSubmit,formState:{isSubmitting,errors,isValid}} = useForm({
-        mode:'onTouched'
+        mode:'all'
     })
     const submitForm = async (data:FieldValues) => {
-        try {
-            await agent.Account.login(data);
-        }catch (e) {
-            console.error(e);
-        }
+      await dispatch(signInUser(data));
+      navigate('/catalog')
 
+        // await dispatch(signInUser(data));
+        // let token: any;
+        // // @ts-ignore
+        // token = JSON.parse(localStorage.getItem('user')).token;
+        // console.log(token)
+        // if(token) axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+        // navigate('/catalog')
     }
 
     return (
-        <ThemeProvider theme={theme}>
             <Container component="main" maxWidth="xs">
                 <CssBaseline />
                 <Box
@@ -104,9 +97,7 @@ const Login = () => {
                         </Grid>
                     </Box>
                 </Box>
-                <Copyright sx={{ mt: 8, mb: 4 }} />
             </Container>
-        </ThemeProvider>
     );
 };
 

@@ -7,6 +7,7 @@ import './index.css';
 import {Provider} from "react-redux";
 import {store} from "./store/configureStore";
 import Footer from "./components/footer/Footer";
+import {createBrowserHistory} from "history";
 
 
 ReactDOM.createRoot(document.getElementById('root')!).render(

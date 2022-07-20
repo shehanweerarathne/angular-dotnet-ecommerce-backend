@@ -1,14 +1,32 @@
 import axios, { AxiosError, AxiosResponse } from "axios";
 import { toast } from "react-toastify";
 import {PaginatedResponse} from "../models/Pagination";
+import {store} from "../store/configureStore";
+
 
 const sleep = () => new Promise(resolve => setTimeout(resolve, 500));
+
 
 axios.defaults.baseURL = 'http://localhost:5194/api/';
 axios.defaults.withCredentials = true;
 
+
 const responseBody = (response: AxiosResponse) => response.data;
 
+axios.interceptors.request.use(config => {
+    const user = localStorage.getItem('user')
+    if(user){
+        const userJSON = JSON.parse(user);
+        if(userJSON.token){
+            config.headers = {
+                ...config.headers,
+                authorization: `Bearer ${userJSON.token}`,
+            };
+        }
+    }
+
+    return config;
+})
 axios.interceptors.response.use(async response => {
     await sleep();
     const pagination = response.headers['pagination'];
@@ -34,7 +52,7 @@ axios.interceptors.response.use(async response => {
             toast.error(data.title);
             break;
         case 401:
-            toast.error(data.title);
+            toast.error(data.title || 'Unauthorized');
             break;
         default:
             break;
@@ -71,7 +89,7 @@ const Basket = {
 const Account = {
     login: (values:any) => requests.post('Account/Login',values),
     register: (values:any) => requests.post('Account/Register',values),
-    currentUser: (values:any) => requests.get('Account/currentUser')
+    currentUser: () => requests.get('account/currentUser'),
 };
 
 const agent = {

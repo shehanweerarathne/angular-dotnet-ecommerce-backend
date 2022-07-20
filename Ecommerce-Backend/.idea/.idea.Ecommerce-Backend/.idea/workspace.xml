@@ -6,22 +6,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c8e69c07-1a9f-4de3-9683-8bf59deaebc3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/components/footer/Footer.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/components/footer/Footer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/components/react-hook-form/react-hook-form.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/models/user.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/pages/Account/Login.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/pages/Account/Register.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/pages/Account/accountSlice.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/components/errors/ServerError.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Ecommerce-Backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Ecommerce-Backend/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/staticwebassets.pack.sentinel" beforeDir="false" afterPath="$PROJECT_DIR$/obj/staticwebassets.pack.sentinel" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/src/API/Agent.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/API/Agent.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/src/components/header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/components/header/Header.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/src/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/main.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/src/store/configureStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/store/configureStore.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/src/pages/Account/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/pages/Account/Login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/src/pages/Account/accountSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/pages/Account/accountSlice.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,6 +140,10 @@
       <workItem from="1657897101192" duration="241000" />
       <workItem from="1657897871049" duration="925000" />
       <workItem from="1658123120466" duration="647000" />
+      <workItem from="1658205372854" duration="975000" />
+      <workItem from="1658240642689" duration="1163000" />
+      <workItem from="1658249539043" duration="647000" />
+      <workItem from="1658287008309" duration="835000" />
     </task>
     <task id="LOCAL-00001" summary="backed initial commit">
       <created>1656687327661</created>
