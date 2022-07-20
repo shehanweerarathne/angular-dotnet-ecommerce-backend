@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useCallback} from 'react'
 import {Routes, Route} from "react-router-dom";
 import './App.css'
 import Catalog from './components/catalog/Catalog'
@@ -20,7 +20,7 @@ import {getCookie} from "./util/util";
 import agent from "./API/Agent";
 import CheckoutPage from "./pages/checkout/CheckoutPage";
 import {useAppDispatch} from "./store/configureStore";
-import {setBasket} from "./pages/basket/basketSlice";
+import {fetchBasketAsync, setBasket} from "./pages/basket/basketSlice";
 import Login from "./pages/Account/Login";
 import Register from "./pages/Account/Register";
 import Footer from "./components/footer/Footer";
@@ -31,21 +31,20 @@ function App() {
     const dispatch = useAppDispatch();
 
 
-    const [loading, setLoading] = useState(true)
-    useEffect(() => {
-        const buyerId = getCookie('buyerId');
-            dispatch(fetchCurrentUser());
+    const [loading, setLoading] = useState(true);
 
-
-        if (buyerId) {
-            agent.Basket.get()
-                .then(basket => dispatch(setBasket(basket)))
-                .catch(error => console.log(error))
-                .finally(() => setLoading(false));
-        } else {
-            setLoading(false);
+    const initApp = useCallback(async () => {
+        try {
+            await dispatch(fetchCurrentUser());
+            await dispatch(fetchBasketAsync());
+        } catch (error) {
+            console.log(error);
         }
-    }, [setBasket])
+    }, [dispatch]);
+    
+    useEffect(() => {
+      initApp().then(()=>setLoading(false))
+    }, [initApp])
 
 
     const [darkMode, setDarkMode] = useState(false);
