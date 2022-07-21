@@ -21,15 +21,26 @@ import {Add, Delete, Remove} from "@mui/icons-material";
 import {LoadingButton} from "@material-ui/lab";
 import {Box,  Grid} from "@material-ui/core";
 import BasketSummary from "./basket-summary";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {useAppDispatch, useAppSelector} from "../../store/configureStore";
 import {addBasketItemAsync, removeBasketItemAsync, setBasket} from "./basketSlice";
 axios.defaults.withCredentials = true;
 const BasketPage = () => {
     const { basket, status } = useAppSelector(state => state.basket);
+    const {user} = useAppSelector(state => state.account);
     const dispatch = useAppDispatch();
+    const navigate = useNavigate();
 
-    if (!basket) return <Typography variant='h3'>Your basket is empty</Typography>
+
+    if (!basket || basket.items.length ==0) return <Typography variant='h3'>Your basket is empty</Typography>
+    const onClickCheckout = () => {
+        if (!user || user==null){
+            navigate('/login')
+        }else {
+            console.log(user)
+        }
+
+    }
 
     return (
         <>
@@ -94,8 +105,7 @@ const BasketPage = () => {
                 <Grid item xs={6}>
                     <BasketSummary />
                     <Button
-                        component={Link}
-                        to='/checkout'
+                        onClick={()=>onClickCheckout()}
                         variant='contained'
                         size='large'
                         fullWidth

@@ -62,7 +62,7 @@ builder.Services.AddIdentityCore<User>(options =>
     {
         options.User.RequireUniqueEmail = true;
     })
-    .AddRoles<IdentityRole>()
+    .AddRoles<Role>()
     .AddEntityFrameworkStores<DataContext>();
 
 
@@ -84,7 +84,7 @@ builder.Services.AddAuthorization();
 
 var app = builder.Build();
 
-/*
+
 using var scope = app.Services.CreateScope();
 var context = scope.ServiceProvider.GetRequiredService<DataContext>();
 var userManager = scope.ServiceProvider.GetRequiredService<UserManager<User>>();
@@ -99,7 +99,7 @@ catch (Exception ex)
 {
     logger.LogError(ex, "Problem migrating data");
 }
-*/
+
 
 
 

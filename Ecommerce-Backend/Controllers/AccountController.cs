@@ -1,5 +1,6 @@
 ﻿using Ecommerce_Backend.Data;
 using Ecommerce_Backend.DTOs;
+using Ecommerce_Backend.Extentions;
 using Ecommerce_Backend.Models;
 using Ecommerce_Backend.Services;
 using Microsoft.AspNetCore.Authorization;
@@ -31,10 +32,22 @@ public class AccountController : BaseApiController
             return Unauthorized();
         }
 
+        var userBasket = await RetrieveBasket(loginDto.Username);
+        var anonBasket = await RetrieveBasket(Request.Cookies["buyerId"]);
+
+        if (anonBasket != null)
+        {
+            if (userBasket != null) _context.Baskets.Remove(userBasket);
+            anonBasket.BuyerId = user.UserName;
+            Response.Cookies.Delete("buyerId");
+            await _context.SaveChangesAsync();
+        }
+
         return Ok(new UserDto
         {
             Email = user.Email,
-            Token = await _tokenService.GenerateToken(user)
+            Token = await _tokenService.GenerateToken(user),
+            Basket = anonBasket !=null ? anonBasket.MapBasketToDto() : userBasket?.MapBasketToDto()
         });
     }
 
@@ -70,7 +83,8 @@ public class AccountController : BaseApiController
         return new UserDto
         {
             Email = user.Email,
-            Token = await _tokenService.GenerateToken(user)
+            Token = await _tokenService.GenerateToken(user),
+            Basket = userBasket?.MapBasketToDto()
         };
     }
     

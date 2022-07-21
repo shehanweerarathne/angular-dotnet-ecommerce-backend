@@ -17,8 +17,13 @@ const Login = () => {
         mode:'all'
     })
     const submitForm = async (data:FieldValues) => {
-      await dispatch(signInUser(data));
-      navigate('/catalog')
+        try {
+            await dispatch(signInUser(data));
+            navigate('/catalog')
+        }catch (e) {
+            console.error(e);
+        }
+
 
         // await dispatch(signInUser(data));
         // let token: any;

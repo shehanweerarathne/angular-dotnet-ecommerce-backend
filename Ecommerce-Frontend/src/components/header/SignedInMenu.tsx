@@ -3,6 +3,7 @@ import React from 'react';
 import {useAppDispatch, useAppSelector} from "../../store/configureStore";
 import {signOut} from "../../pages/Account/accountSlice";
 import {useNavigate} from "react-router-dom";
+import {clearBasket} from "../../pages/basket/basketSlice";
 
 const SignedInMenu = () => {
     const dispatch = useAppDispatch();
@@ -18,6 +19,7 @@ const SignedInMenu = () => {
     const navigate = useNavigate()
     const onclickLogOut = () => {
         dispatch(signOut());
+        dispatch(clearBasket());
         navigate('/');
     }
 

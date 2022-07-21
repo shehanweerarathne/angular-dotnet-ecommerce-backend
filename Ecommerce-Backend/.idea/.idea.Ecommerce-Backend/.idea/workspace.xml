@@ -6,12 +6,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c8e69c07-1a9f-4de3-9683-8bf59deaebc3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/pages/Account/RegisterPage.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Extentions/BasketExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Models/Address.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Models/OrderAggregate/Order.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Models/OrderAggregate/OrderItem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Models/OrderAggregate/OrderStatus.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Models/OrderAggregate/ProductItemOrdered.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Models/OrderAggregate/ShippingAddress.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Models/Role.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Models/UserAddress.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Ecommerce-Backend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Ecommerce-Backend/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/src/pages/Account/Register.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/pages/Account/Register.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/AccountController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/AccountController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/BasketController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/BasketController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DTOs/BasketDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/BasketDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DTOs/UserDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DTOs/UserDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/DataContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Data/DataContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Migrations/20220713163630_dataAddr.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Migrations/20220713163630_dataAddr.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Migrations/20220713180338_addIdentity.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Migrations/20220721161541_initial.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Migrations/20220713180338_addIdentity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Migrations/20220721161541_initial.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Migrations/DataContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Migrations/DataContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/TokenService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/TokenService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/Ecommerce-Backend.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/Ecommerce-Backend.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/Ecommerce-Backend.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/Ecommerce-Backend.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/Ecommerce-Backend.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/Ecommerce-Backend.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/Ecommerce-Backend.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/Ecommerce-Backend.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/Ecommerce-Backend.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/Ecommerce-Backend.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/ref/Ecommerce-Backend.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/ref/Ecommerce-Backend.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/refint/Ecommerce-Backend.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/refint/Ecommerce-Backend.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/staticwebassets.pack.sentinel" beforeDir="false" afterPath="$PROJECT_DIR$/obj/staticwebassets.pack.sentinel" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/src/components/header/SignedInMenu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/components/header/SignedInMenu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/src/models/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/models/user.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/src/pages/Account/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/pages/Account/Login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/src/pages/Account/accountSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/pages/Account/accountSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/src/pages/basket/BasketPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/pages/basket/BasketPage.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/src/pages/basket/basketSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/pages/basket/basketSlice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/src/pages/home/HomePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/pages/home/HomePage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ecommerce-Frontend/src/pages/checkout/CheckoutPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Ecommerce-Frontend/src/pages/checkout/CheckoutPage.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +62,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3ea95343b9387b73062a9b61b7538f826c54ce3529632b4472ba4494044d23/AsyncTaskMethodBuilderT.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c9e6255c12cf4dd73867c87a196e414c1c61eac580f6fbfc10229ea9b073fc/WebApplicationServiceCollection.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8fe5b9fa0d07425ba30fafd53baa5a7ea23880/fb/347b64b1/RuntimeHelpers.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f4708639776589f5ac2739f6fcbfc67343b1f9dac51cc1dbfdb003eef77cc1c/Monitor.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8fe5b9fa0d07425ba30fafd53baa5a7ea23880/3c/d88a231b/AsyncValueTaskMethodBuilder`1.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -144,6 +177,8 @@
       <workItem from="1658308916904" duration="697000" />
       <workItem from="1658326608891" duration="605000" />
       <workItem from="1658334003118" duration="823000" />
+      <workItem from="1658368596125" duration="8621000" />
+      <workItem from="1658412818508" duration="4546000" />
     </task>
     <task id="LOCAL-00001" summary="backed initial commit">
       <created>1656687327661</created>
@@ -233,5 +268,24 @@
     <MESSAGE value="Authentication implemented in server" />
     <MESSAGE value="Login state updated" />
     <option name="LAST_COMMIT_MESSAGE" value="Login state updated" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Controllers/AccountController.cs</url>
+          <line>27</line>
+          <properties documentPath="C:\Users\chami\Projects\dotnet-react-redux-ecommerce\Ecommerce-Backend\Controllers\AccountController.cs" initialLine="27" containingFunctionPresentation="method 'Login'">
+            <startOffsets>
+              <option value="883" />
+            </startOffsets>
+            <endOffsets>
+              <option value="884" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
