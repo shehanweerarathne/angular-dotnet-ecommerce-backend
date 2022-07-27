@@ -4,6 +4,7 @@ using Ecommerce_Backend.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Ecommerce_Backend.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20220722123204_orderStatus")]
+    partial class orderStatus
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -178,14 +180,14 @@ namespace Ecommerce_Backend.Migrations
                         new
                         {
                             Id = new Guid("8b09e4a6-5182-4558-85b0-bedc94cb231a"),
-                            ConcurrencyStamp = "f2b5129f-a634-4a7f-9af0-da42b3e4058c",
+                            ConcurrencyStamp = "5ec0f536-9e29-4c84-bda5-22a2bc4019cf",
                             Name = "Member",
                             NormalizedName = "MEMBER"
                         },
                         new
                         {
                             Id = new Guid("8d1bd94a-c96d-446b-9549-5f4bc069a779"),
-                            ConcurrencyStamp = "e942014f-3323-43ac-afb5-a7b735488a33",
+                            ConcurrencyStamp = "f0edd661-77ca-4886-9c00-93a0e9bc220f",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });

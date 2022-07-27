@@ -37,7 +37,8 @@ const BasketPage = () => {
         if (!user || user==null){
             navigate('/login')
         }else {
-            console.log(user)
+            console.log(user);
+            navigate('/checkout')
         }
 
     }

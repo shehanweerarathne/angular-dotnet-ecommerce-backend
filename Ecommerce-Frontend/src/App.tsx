@@ -25,6 +25,7 @@ import Login from "./pages/Account/Login";
 import Register from "./pages/Account/Register";
 import Footer from "./components/footer/Footer";
 import {fetchCurrentUser} from "./pages/Account/accountSlice";
+import Checkout from "./components/checkout/Checkout";
 
 
 function App() {
@@ -75,7 +76,7 @@ function App() {
                     <Route path={'/about'} element={<AboutPage/>}/>
                     <Route path={'/contact'} element={<ContactPage/>}/>
                     <Route path={'/basket'} element={<BasketPage/>}/>
-                    <Route path={'/checkout'} element={<CheckoutPage/>}/>
+                    <Route path={'/checkout'} element={<Checkout/>}/>
                     <Route path={'/login'} element={<Login/>}/>
                     <Route path={'/register'} element={<Register/>}/>
                     <Route path={'*'} element={<NotFound/>}/>

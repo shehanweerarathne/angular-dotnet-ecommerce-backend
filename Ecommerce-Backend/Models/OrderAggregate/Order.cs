@@ -9,7 +9,7 @@ public class Order
     public List<OrderItem> OrderItems { get; set; }
     public long Subtotal { get; set; }
     public long DeliveryFee { get; set; }
-    public OrderStatus Type { get; set; } = OrderStatus.Pending;
+    public OrderStatus OrderStatus { get; set; } = OrderStatus.Pending;
 
     public long GetTotal()
     {

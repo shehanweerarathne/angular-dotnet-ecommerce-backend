@@ -1,5 +1,6 @@
 ﻿using Ecommerce_Backend.DTOs;
 using Ecommerce_Backend.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Ecommerce_Backend.Extentions;
 
@@ -22,5 +23,12 @@ public static class BasketExtensions
                 Quantity = item.Quantity
             }).ToList()
         };
+    }
+
+    public static IQueryable<Basket> RetrieveBasketWithItems(this IQueryable<Basket> query, string buyerId)
+    {
+        return query.Include(i => i.Items)
+            .ThenInclude(p => p.Product)
+            .Where(b => b.BuyerId == buyerId);
     }
 }
