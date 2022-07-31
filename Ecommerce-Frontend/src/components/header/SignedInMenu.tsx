@@ -16,7 +16,14 @@ const SignedInMenu = () => {
     const handleClose = () => {
         setAnchorEl(null);
     };
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+
+    const openOrders = () => {
+        setAnchorEl(null);
+        navigate('/orders')
+    };
+
+
     const onclickLogOut = () => {
         dispatch(signOut());
         dispatch(clearBasket());
@@ -38,7 +45,7 @@ const SignedInMenu = () => {
                 onClose={handleClose}
             >
                 <MenuItem onClick={handleClose}>Profile</MenuItem>
-                <MenuItem onClick={handleClose}>My orders</MenuItem>
+                <MenuItem onClick={openOrders}>My orders</MenuItem>
                 <MenuItem onClick={()=>onclickLogOut()}>Logout</MenuItem>
             </Menu>
         </>

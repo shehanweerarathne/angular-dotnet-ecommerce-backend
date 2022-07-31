@@ -104,7 +104,7 @@ public class BasketController:BaseApiController
     }
     private Basket CreateBasket()
     {
-        var buyerId = Guid.NewGuid().ToString();
+        var buyerId = User.Identity?.Name ??  Guid.NewGuid().ToString();
         var cookieOption = new CookieOptions {IsEssential = true, Expires = DateTime.Now.AddDays(30)};
         Response.Cookies.Append("buyerId",buyerId,cookieOption);
         var basket = new Basket {BuyerId = buyerId};

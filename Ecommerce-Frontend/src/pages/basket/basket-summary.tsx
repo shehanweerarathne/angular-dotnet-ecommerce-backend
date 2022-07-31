@@ -3,20 +3,16 @@ import { TableContainer, Paper, Table, TableBody, TableRow, TableCell } from "@m
 
 import {useAppSelector} from "../../store/configureStore";
 
-const BasketSummary = () => {
+interface Props {
+    subtotal?: number;
+}
 
+const BasketSummary = ({subtotal}: Props) => {
+    const {basket} = useAppSelector(state => state.basket);
+    if (subtotal === undefined)
+        subtotal = basket?.items.reduce((sum, item) => sum + (item.quantity * item.price), 0) ?? 0;
+    const deliveryFee = subtotal > 10000 ? 0 : 500;
 
-    const {basket} = useAppSelector(state => state.basket)
-    const [deliveryFee,setDeliveryFee] = useState(0)
-
-
-
-    let subTotal = 0;
-
-    if(basket){
-        subTotal = basket.items.reduce((sum, item) => sum + (item.quantity*item.price), 0)
-
-    }
 
 
     return (
@@ -26,7 +22,7 @@ const BasketSummary = () => {
                     <TableBody>
                         <TableRow>
                             <TableCell colSpan={2}>Subtotal</TableCell>
-                            <TableCell align="right">{subTotal}</TableCell>
+                            <TableCell align="right">{subtotal}</TableCell>
                         </TableRow>
                         <TableRow>
                             <TableCell colSpan={2}>Delivery fee*</TableCell>
@@ -34,7 +30,7 @@ const BasketSummary = () => {
                         </TableRow>
                         <TableRow>
                             <TableCell colSpan={2}>Total</TableCell>
-                            <TableCell align="right">{subTotal + deliveryFee}</TableCell>
+                            <TableCell align="right">{subtotal + deliveryFee}</TableCell>
                         </TableRow>
                         <TableRow>
                             <TableCell>

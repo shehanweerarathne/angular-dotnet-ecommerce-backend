@@ -37,6 +37,7 @@ public class OrdersController :BaseApiController
     [HttpPost]
     public async Task<ActionResult<Guid>> CreateOrder(CreateOrderDto orderDto)
     {
+        var userId = User.Identity.Name;
         var basket = await _context.Baskets.RetrieveBasketWithItems(User.Identity.Name)
             .FirstOrDefaultAsync();
         if (basket == null)

@@ -18,14 +18,14 @@ import LoadingComponent from "./components/errors/LoadingComponent";
 import {useStoreContext} from "./context/StoreContext";
 import {getCookie} from "./util/util";
 import agent from "./API/Agent";
-import CheckoutPage from "./pages/checkout/CheckoutPage";
 import {useAppDispatch} from "./store/configureStore";
 import {fetchBasketAsync, setBasket} from "./pages/basket/basketSlice";
 import Login from "./pages/Account/Login";
 import Register from "./pages/Account/Register";
 import Footer from "./components/footer/Footer";
 import {fetchCurrentUser} from "./pages/Account/accountSlice";
-import Checkout from "./components/checkout/Checkout";
+import CheckoutPage from "./components/checkout/CheckoutPage";
+import Orders from "./components/orders/Orders";
 
 
 function App() {
@@ -76,9 +76,10 @@ function App() {
                     <Route path={'/about'} element={<AboutPage/>}/>
                     <Route path={'/contact'} element={<ContactPage/>}/>
                     <Route path={'/basket'} element={<BasketPage/>}/>
-                    <Route path={'/checkout'} element={<Checkout/>}/>
+                    <Route path={'/checkout'} element={<CheckoutPage/>}/>
                     <Route path={'/login'} element={<Login/>}/>
                     <Route path={'/register'} element={<Register/>}/>
+                    <Route path={'/orders'} element={<Orders/>}/>
                     <Route path={'*'} element={<NotFound/>}/>
                 </Routes>
             </Container>

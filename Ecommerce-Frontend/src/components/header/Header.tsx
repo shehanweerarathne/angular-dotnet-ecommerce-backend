@@ -34,7 +34,8 @@ const midLinks = [
 ];
 const rightLinks = [
     {title: 'register', path: '/register'},
-    {title: 'login', path: '/login'}
+    {title: 'login', path: '/login'},
+    {title: 'orders', path: '/orders'}
 ];
 const navStyles = {
     color: 'inherit',
