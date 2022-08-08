@@ -32,6 +32,12 @@ namespace Ecommerce_Backend.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("ClientSecret")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PaymentIntentId")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("Baskets");
@@ -79,6 +85,9 @@ namespace Ecommerce_Backend.Migrations
 
                     b.Property<int>("OrderStatus")
                         .HasColumnType("int");
+
+                    b.Property<string>("PaymentIntentId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<long>("Subtotal")
                         .HasColumnType("bigint");
@@ -178,14 +187,14 @@ namespace Ecommerce_Backend.Migrations
                         new
                         {
                             Id = new Guid("8b09e4a6-5182-4558-85b0-bedc94cb231a"),
-                            ConcurrencyStamp = "f2b5129f-a634-4a7f-9af0-da42b3e4058c",
+                            ConcurrencyStamp = "3cb47cc6-b50b-4a14-aa40-64d82a808783",
                             Name = "Member",
                             NormalizedName = "MEMBER"
                         },
                         new
                         {
                             Id = new Guid("8d1bd94a-c96d-446b-9549-5f4bc069a779"),
-                            ConcurrencyStamp = "e942014f-3323-43ac-afb5-a7b735488a33",
+                            ConcurrencyStamp = "b739f8c7-4834-4dc0-9e6e-c5ad47aadb3b",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });

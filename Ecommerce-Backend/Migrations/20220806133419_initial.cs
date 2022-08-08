@@ -53,7 +53,9 @@ namespace Ecommerce_Backend.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    BuyerId = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    BuyerId = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    PaymentIntentId = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ClientSecret = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -76,7 +78,8 @@ namespace Ecommerce_Backend.Migrations
                     OrderDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Subtotal = table.Column<long>(type: "bigint", nullable: false),
                     DeliveryFee = table.Column<long>(type: "bigint", nullable: false),
-                    Type = table.Column<int>(type: "int", nullable: false)
+                    OrderStatus = table.Column<int>(type: "int", nullable: false),
+                    PaymentIntentId = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -282,12 +285,12 @@ namespace Ecommerce_Backend.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { new Guid("8b09e4a6-5182-4558-85b0-bedc94cb231a"), "afd5d89e-965f-4146-b5fa-14601e7a697c", "Member", "MEMBER" });
+                values: new object[] { new Guid("8b09e4a6-5182-4558-85b0-bedc94cb231a"), "5523bf17-64a2-47ff-b70f-1c7eeaa77bf1", "Member", "MEMBER" });
 
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { new Guid("8d1bd94a-c96d-446b-9549-5f4bc069a779"), "914c391e-005f-4eb6-8a49-f9ec72d0d61f", "Admin", "ADMIN" });
+                values: new object[] { new Guid("8d1bd94a-c96d-446b-9549-5f4bc069a779"), "75757df3-08d9-4681-b7a0-1d58df857cbe", "Admin", "ADMIN" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",

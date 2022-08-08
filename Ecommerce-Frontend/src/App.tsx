@@ -26,6 +26,7 @@ import Footer from "./components/footer/Footer";
 import {fetchCurrentUser} from "./pages/Account/accountSlice";
 import CheckoutPage from "./components/checkout/CheckoutPage";
 import Orders from "./components/orders/Orders";
+import CheckoutWrapper from "./components/checkout/CheckoutWrapper";
 
 
 function App() {
@@ -76,7 +77,7 @@ function App() {
                     <Route path={'/about'} element={<AboutPage/>}/>
                     <Route path={'/contact'} element={<ContactPage/>}/>
                     <Route path={'/basket'} element={<BasketPage/>}/>
-                    <Route path={'/checkout'} element={<CheckoutPage/>}/>
+                    <Route path={'/checkout'} element={<CheckoutWrapper/>}/>
                     <Route path={'/login'} element={<Login/>}/>
                     <Route path={'/register'} element={<Register/>}/>
                     <Route path={'/orders'} element={<Orders/>}/>

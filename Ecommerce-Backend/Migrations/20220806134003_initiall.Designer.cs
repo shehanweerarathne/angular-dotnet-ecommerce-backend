@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Ecommerce_Backend.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20220721161541_initial")]
-    partial class initial
+    [Migration("20220806134003_initiall")]
+    partial class initiall
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -32,6 +32,12 @@ namespace Ecommerce_Backend.Migrations
 
                     b.Property<string>("BuyerId")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClientSecret")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PaymentIntentId")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -79,11 +85,14 @@ namespace Ecommerce_Backend.Migrations
                     b.Property<DateTime>("OrderDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("OrderStatus")
+                        .HasColumnType("int");
+
+                    b.Property<string>("PaymentIntentId")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<long>("Subtotal")
                         .HasColumnType("bigint");
-
-                    b.Property<int>("Type")
-                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -180,14 +189,14 @@ namespace Ecommerce_Backend.Migrations
                         new
                         {
                             Id = new Guid("8b09e4a6-5182-4558-85b0-bedc94cb231a"),
-                            ConcurrencyStamp = "afd5d89e-965f-4146-b5fa-14601e7a697c",
+                            ConcurrencyStamp = "3cb47cc6-b50b-4a14-aa40-64d82a808783",
                             Name = "Member",
                             NormalizedName = "MEMBER"
                         },
                         new
                         {
                             Id = new Guid("8d1bd94a-c96d-446b-9549-5f4bc069a779"),
-                            ConcurrencyStamp = "914c391e-005f-4eb6-8a49-f9ec72d0d61f",
+                            ConcurrencyStamp = "b739f8c7-4834-4dc0-9e6e-c5ad47aadb3b",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });
