@@ -1,0 +1,9 @@
+docker save -o d:/ecommerce ecommerce
+
+docker tag ecommerce chamithshehan/ecommerce:ecommerce
+
+docker push  chamithshehan/ecommerce:ecommerce
+docker build . -t chamithshehan/ecommerce:v1.01
+
+"SqlServerConnection": "Server=192.46.214.10;Database=EcommerceBackend;User Id=sa;Password=Ac4@blackflag;"
+    

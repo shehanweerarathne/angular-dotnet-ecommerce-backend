@@ -1,0 +1,8 @@
+version: '3.3'
+services:
+  ecommerce:
+    ports:
+      - '7001:80'
+    environment:
+      - 'ConnectionString=Server=192.46.214.10;Database=EcommerceBackend;User Id=sa;Password=Ac4@blackflag;'
+    image: 'chamithshehan/ecommerce:v1.03'
