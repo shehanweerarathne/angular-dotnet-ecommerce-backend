@@ -12,4 +12,6 @@ export interface Basket {
     id: string;
     buyerId: string;
     items: BasketItem[];
+    paymentIntentId?:string;
+    clientSecret?:string;
 }

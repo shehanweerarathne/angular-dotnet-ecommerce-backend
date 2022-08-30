@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
@@ -8,9 +8,17 @@ import AppTextInput from "../app-text-input/AppTextInput";
 import {useFormContext} from "react-hook-form";
 import {CardCvcElement, CardExpiryElement, CardNumberElement} from "@stripe/react-stripe-js";
 import {StripeInput} from "./StripeInput";
+import {useStore} from "react-redux";
+import {StripeElement, StripeElementType} from "@stripe/stripe-js";
 
-const PaymentForm = () => {
+interface Props {
+    cardState : {elementError: {[key in StripeElementType]?: string}};
+    onCardInputChange: (event:any) => void;
+}
+
+const PaymentForm = ({cardState,onCardInputChange}:Props) => {
     const {control} = useFormContext();
+
     return (
         <>
             <Typography variant="h6" gutterBottom>
@@ -22,6 +30,9 @@ const PaymentForm = () => {
                 </Grid>
                 <Grid item xs={12} md={6}>
                     <TextField
+                        onChange={onCardInputChange}
+                        error={!!cardState.elementError.cardNumber}
+                        helperText={cardState.elementError.cardNumber}
                         id="cardNumber"
                         label="Card number"
                         fullWidth
@@ -38,6 +49,9 @@ const PaymentForm = () => {
                 </Grid>
                 <Grid item xs={12} md={6}>
                     <TextField
+                        onChange={onCardInputChange}
+                        error={!!cardState.elementError.cardExpiry}
+                        helperText={cardState.elementError.cardExpiry}
                         id="expDate"
                         label="Expiry date"
                         fullWidth
@@ -55,9 +69,11 @@ const PaymentForm = () => {
                 <Grid item xs={12} md={6}>
                     <TextField
                         // required
+                        onChange={onCardInputChange}
+                        error={!!cardState.elementError.cardCvc}
+                        helperText={cardState.elementError.cardCvc}
                         id="cvv"
                         label="CVV"
-                        helperText="Last three digits on signature strip"
                         fullWidth
                         autoComplete="cc-csc"
                         variant="outlined"

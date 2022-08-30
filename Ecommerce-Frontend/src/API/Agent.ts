@@ -92,6 +92,9 @@ const Account = {
     currentUser: () => requests.get('account/currentUser'),
     fetchAddress: () => requests.get('account/savedAddress')
 };
+const Payments = {
+    createPaymentIntent: () => requests.post('payments', {})
+};
 const Orders = {
     list: () => requests.get('orders'),
     fetch: (id: string) => requests.get(`orders/${id}`),
@@ -103,7 +106,8 @@ const agent = {
     TestErrors,
     Basket,
     Account,
-    Orders
+    Orders,
+    Payments
 }
 
 export default agent;
