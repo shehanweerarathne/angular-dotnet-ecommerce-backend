@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "L9y/Uhv3G6MAW1srueX+VhAKL8NYefq3UpuygHusxpM=",
+  "Source": "angular-dotnet-ecommerce-backend",
+  "BasePath": "_content/angular-dotnet-ecommerce-backend",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
