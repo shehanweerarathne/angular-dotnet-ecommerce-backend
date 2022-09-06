@@ -5,6 +5,7 @@ using Ecommerce_Backend.DTOs;
 using Ecommerce_Backend.DTOs.RequestHelpers;
 using Ecommerce_Backend.Extentions;
 using Ecommerce_Backend.Models;
+using Ecommerce_Backend.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -15,11 +16,13 @@ public class ProductsController: BaseApiController
 {
     private readonly DataContext _context;
     private readonly IMapper _mapper;
+    private readonly IImageService _imageService;
 
-    public ProductsController(DataContext context, IMapper mapper)
+    public ProductsController(DataContext context, IMapper mapper, IImageService imageService)
     {
         _context = context;
         _mapper = mapper;
+        _imageService = imageService;
     }
     
     
@@ -81,9 +84,20 @@ public class ProductsController: BaseApiController
 
     [Authorize(Roles = "Admin")]
     [HttpPost]
-    public async Task<ActionResult<Product>> CreateProduct(CreateProductDto createProduct)
+    public async Task<ActionResult<Product>> CreateProduct([FromForm]CreateProductDto createProduct)
     {
         var product = _mapper.Map<Product>(createProduct);
+        if (createProduct.File != null)
+        {
+            var imageResult = await _imageService.AddImageAsync(createProduct.File);
+            if (imageResult.Error != null)
+                return BadRequest(new ProblemDetails
+                {
+                    Title = imageResult.Error.Message
+                });
+            product.PictureUrl = imageResult.SecureUrl.ToString();
+            product.PublicId = imageResult.PublicId;
+        }
         _context.Products.Add(product);
         var result = await _context.SaveChangesAsync() > 0;
         if (result) return CreatedAtRoute("GetProduct", new {Id = product.Description}, product);
