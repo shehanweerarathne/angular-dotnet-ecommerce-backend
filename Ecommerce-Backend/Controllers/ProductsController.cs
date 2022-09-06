@@ -1,9 +1,11 @@
 ﻿using System.Text.Json;
+using AutoMapper;
 using Ecommerce_Backend.Data;
 using Ecommerce_Backend.DTOs;
 using Ecommerce_Backend.DTOs.RequestHelpers;
 using Ecommerce_Backend.Extentions;
 using Ecommerce_Backend.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,9 +14,12 @@ namespace Ecommerce_Backend.Controllers;
 public class ProductsController: BaseApiController
 {
     private readonly DataContext _context;
-    public ProductsController(DataContext context)
+    private readonly IMapper _mapper;
+
+    public ProductsController(DataContext context, IMapper mapper)
     {
         _context = context;
+        _mapper = mapper;
     }
     
     
@@ -50,7 +55,7 @@ public class ProductsController: BaseApiController
 
     
     
-    [HttpGet("{id}")]
+    [HttpGet("{id}",Name = "GetProduct")]
     public async Task<ActionResult<Product>> GetProduct(int id)
     {
         var product = await _context.Products.FindAsync(id);
@@ -72,6 +77,48 @@ public class ProductsController: BaseApiController
         var brands = await _context.Products.Select(p => p.Brand).Distinct().ToListAsync();
         var types = await _context.Products.Select(p => p.Type).Distinct().ToListAsync();
         return Ok(new {brands,types});
+    }
+
+    [Authorize(Roles = "Admin")]
+    [HttpPost]
+    public async Task<ActionResult<Product>> CreateProduct(CreateProductDto createProduct)
+    {
+        var product = _mapper.Map<Product>(createProduct);
+        _context.Products.Add(product);
+        var result = await _context.SaveChangesAsync() > 0;
+        if (result) return CreatedAtRoute("GetProduct", new {Id = product.Description}, product);
+        return BadRequest(new ProblemDetails {Title = "Problem creating new product"});
+        
+    }
+    
+    [Authorize(Roles = "Admin")]
+    [HttpPut]
+    public async Task<ActionResult<Product>> UpdateProduct(UpdateProductDto updateProduct)
+    {
+        var product = await _context.Products.FindAsync(updateProduct.Id);
+        if (product == null) return NotFound();
+        _mapper.Map(updateProduct, product);
+        var result = await _context.SaveChangesAsync() > 0;
+        /*var product = _mapper.Map<Product>(updateProduct);
+        _context.Products.Add(product);*/
+        
+        if (result) return CreatedAtRoute("GetProduct", new {Id = product.Description}, product);
+        return BadRequest(new ProblemDetails {Title = "Problem updating product"});
+    }
+    
+    [Authorize(Roles = "Admin")]
+    [HttpDelete("{id}")]
+    public async Task<ActionResult> DeleteProduct(Guid id)
+    {
+        var product = await _context.Products.FindAsync(id);
+        if (product == null) return NotFound();
+        _context.Products.Remove(product);
+        var result = await _context.SaveChangesAsync() > 0;
+        /*var product = _mapper.Map<Product>(updateProduct);
+        _context.Products.Add(product);*/
+        
+        if (result) return CreatedAtRoute("GetProduct", new {Id = product.Description}, product);
+        return BadRequest(new ProblemDetails {Title = "Problem Deleting product"});
     }
 
 }

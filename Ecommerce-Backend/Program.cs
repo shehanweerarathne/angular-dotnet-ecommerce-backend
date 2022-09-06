@@ -1,5 +1,6 @@
 using System.Text;
 using Ecommerce_Backend.Data;
+using Ecommerce_Backend.DTOs.RequestHelpers;
 using Ecommerce_Backend.Middleware;
 using Ecommerce_Backend.Models;
 using Ecommerce_Backend.Persistence;
@@ -59,6 +60,8 @@ builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IPaymentService, PaymentService>();
 builder.Services.AddScoped<ITokenService, TokenService>();
+builder.Services.AddScoped<IImageService, ImageService>();
+builder.Services.AddAutoMapper(typeof(MappingProfiles).Assembly);
 builder.Services.AddIdentityCore<User>(options =>
     {
         options.User.RequireUniqueEmail = true;
