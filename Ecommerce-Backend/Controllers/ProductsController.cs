@@ -112,6 +112,21 @@ public class ProductsController: BaseApiController
         var product = await _context.Products.FindAsync(updateProduct.Id);
         if (product == null) return NotFound();
         _mapper.Map(updateProduct, product);
+        if (updateProduct.File != null)
+        {
+            var imageResult = await _imageService.AddImageAsync(updateProduct.File);
+            if (imageResult.Error != null)
+                return BadRequest(new ProblemDetails
+                {
+                    Title = imageResult.Error.Message
+                });
+            if (!string.IsNullOrEmpty(product.PublicId))
+            {
+                await _imageService.DeleteImageAsync(product.PublicId);
+            }
+            product.PictureUrl = imageResult.SecureUrl.ToString();
+            product.PublicId = imageResult.PublicId;
+        }
         var result = await _context.SaveChangesAsync() > 0;
         /*var product = _mapper.Map<Product>(updateProduct);
         _context.Products.Add(product);*/
@@ -126,6 +141,10 @@ public class ProductsController: BaseApiController
     {
         var product = await _context.Products.FindAsync(id);
         if (product == null) return NotFound();
+        if (!string.IsNullOrEmpty(product.PublicId))
+        {
+            await _imageService.DeleteImageAsync(product.PublicId);
+        }
         _context.Products.Remove(product);
         var result = await _context.SaveChangesAsync() > 0;
         /*var product = _mapper.Map<Product>(updateProduct);
