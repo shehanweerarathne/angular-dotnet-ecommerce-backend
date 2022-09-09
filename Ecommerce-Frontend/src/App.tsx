@@ -27,6 +27,7 @@ import {fetchCurrentUser} from "./pages/Account/accountSlice";
 import CheckoutPage from "./components/checkout/CheckoutPage";
 import Orders from "./components/orders/Orders";
 import CheckoutWrapper from "./components/checkout/CheckoutWrapper";
+import Inventory from "./Admin/Inventory";
 
 
 function App() {
@@ -81,6 +82,7 @@ function App() {
                     <Route path={'/login'} element={<Login/>}/>
                     <Route path={'/register'} element={<Register/>}/>
                     <Route path={'/orders'} element={<Orders/>}/>
+                    <Route path={'/inventory'} element={<Inventory/>}/>
                     <Route path={'*'} element={<NotFound/>}/>
                 </Routes>
             </Container>

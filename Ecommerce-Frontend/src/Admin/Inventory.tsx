@@ -9,6 +9,7 @@ import agent from "../API/Agent";
 import {LoadingButton} from "@material-ui/lab";
 import AppPagination from "../components/app-pagination/AppPagination";
 import {setPageNumber} from "../components/catalog/catalogSlice";
+import ProductForm from "./ProductForm";
 
 
 export default function Inventory() {
@@ -27,10 +28,10 @@ export default function Inventory() {
     function handleDeleteProduct(id: string) {
         setLoading(true);
         setTarget(id);
-        agent.Admin.deleteProduct(id)
-            .then(() => dispatch(removeProduct(id)))
-            .catch(error => console.log(error))
-            .finally(() => setLoading(false));
+        // agent.Admin.deleteProduct(id)
+        //     .then(() => dispatch(removeProduct(id)))
+        //     .catch(error => console.log(error))
+        //     .finally(() => setLoading(false));
     }
 
     function cancelEdit() {
