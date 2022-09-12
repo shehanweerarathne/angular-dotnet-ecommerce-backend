@@ -1,4 +1,5 @@
-﻿using angular_dotnet_ecommerce_backend.Data;
+﻿using angular_dotnet_ecommerce_backend.Core.Interfaces;
+using angular_dotnet_ecommerce_backend.Data;
 using angular_dotnet_ecommerce_backend.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -8,31 +9,24 @@ namespace angular_dotnet_ecommerce_backend.Controllers;
 [Route("api/[controller]")]
 public class ProductsController : ControllerBase
 {
-    private readonly StoreContext _context;
+    private readonly IProductRepository _productRepository;
 
-    public ProductsController(StoreContext context)
+
+    public ProductsController(IProductRepository productRepository)
     {
-        _context = context;
+        _productRepository = productRepository;
     }
 
     [HttpGet]
     public async  Task<ActionResult<List<Product>>> GetProducts()
     {
-        var products = await _context.Products
-            .Include(b=>b.ProductBrand)
-            .Include(t=>t.ProductType)
-            .AsQueryable()
-            .ToListAsync();
+        var products = await _productRepository.GetProductsAsync();
         return Ok(products);
     }
-    [HttpGet]
-    public async  Task<ActionResult<List<Product>>> GetProduct()
+    [HttpGet("{id}")]
+    public async  Task<ActionResult<Product>> GetProduct(Guid id)
     {
-        var products = await _context.Products
-            .Include(b=>b.ProductBrand)
-            .Include(t=>t.ProductType)
-            .AsQueryable()
-            .ToListAsync();
-        return Ok(products);
+        var product = await _productRepository.GetProductByIdAsync(id);
+        return Ok(product);
     }
 }

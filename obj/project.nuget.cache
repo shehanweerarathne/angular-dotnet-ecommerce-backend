@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "p7drhD6xM3PWb3grkz/7RpJtNAkB/YWBnPt7DhRZ8YecAIMdsVNZ1kuh5HZVIrF8QfKKrZ+GFUbhH2kZsgZoWA==",
+  "dgSpecHash": "5g3Q8/BF5f1PC/biW9I9WBYKL+3AoKaPzbuWvEp1thAnWKrdw2buLoHhmudaipeSIdRQ6dPqSS7ede2RhovEtQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\chami\\Projects\\angular-dotnet-ecommerce-backend\\angular-dotnet-ecommerce-backend.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\chami\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
+    "C:\\Users\\chami\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
     "C:\\Users\\chami\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
-    "C:\\Users\\chami\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\chami\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\chami\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "C:\\Users\\chami\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",
     "C:\\Users\\chami\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.8\\microsoft.entityframeworkcore.6.0.8.nupkg.sha512",
