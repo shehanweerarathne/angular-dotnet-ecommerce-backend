@@ -1,6 +1,8 @@
-﻿namespace angular_dotnet_ecommerce_backend.Entities;
+﻿using angular_dotnet_ecommerce_backend.Entities;
 
-public class Product 
+namespace angular_dotnet_ecommerce_backend.DTOs;
+
+public class ProductReturnDto
 {
     public Guid Id { get; set; }
 
