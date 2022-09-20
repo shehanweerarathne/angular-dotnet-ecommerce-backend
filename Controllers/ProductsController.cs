@@ -7,9 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace angular_dotnet_ecommerce_backend.Controllers;
-[ApiController]
-[Route("api/[controller]")]
-public class ProductsController : ControllerBase
+
+public class ProductsController : BaseApiController
 {
     private readonly IProductRepository _productRepository;
     private readonly IMapper _mapper;
@@ -25,7 +24,8 @@ public class ProductsController : ControllerBase
     public async  Task<ActionResult<List<ProductReturnDto>>> GetProducts()
     {
         var products = await _productRepository.GetProductsAsync();
-        return Ok(products);
+        List<ProductReturnDto> productViews = _mapper.Map<IReadOnlyList<Product>, List<ProductReturnDto>>(products);
+        return Ok(productViews);
     }
     [HttpGet("{id}")]
     public async  Task<ActionResult<Product>> GetProduct(Guid id)

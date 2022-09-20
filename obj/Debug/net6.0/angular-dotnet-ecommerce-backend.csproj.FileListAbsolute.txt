@@ -128,3 +128,4 @@ C:\Users\chami\Projects\angular-dotnet-ecommerce-backend\obj\Debug\net6.0\angula
 C:\Users\chami\Projects\angular-dotnet-ecommerce-backend\obj\Debug\net6.0\ref\angular-dotnet-ecommerce-backend.dll
 C:\Users\chami\Projects\angular-dotnet-ecommerce-backend\bin\Debug\net6.0\AutoMapper.dll
 C:\Users\chami\Projects\angular-dotnet-ecommerce-backend\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\chami\Projects\angular-dotnet-ecommerce-backend\bin\Debug\net6.0\angular-dotnet-ecommerce-backend.staticwebassets.runtime.json

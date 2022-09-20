@@ -27,6 +27,7 @@
 
     <ItemGroup>
       <Folder Include="Core\Specifications" />
+      <Folder Include="wwwroot" />
     </ItemGroup>
 
 </Project>

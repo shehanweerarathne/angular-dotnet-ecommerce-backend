@@ -44,8 +44,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
 
+app.UseStatusCodePagesWithReExecute("/errors/{0}");
+
+app.UseHttpsRedirection();
+app.UseStaticFiles();
 app.UseAuthorization();
 
 app.MapControllers();

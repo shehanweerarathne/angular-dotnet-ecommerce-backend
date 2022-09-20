@@ -1,8 +1,7 @@
 ﻿namespace angular_dotnet_ecommerce_backend.Entities;
 
-public class ProductBrand 
+public class ProductBrand : BaseEntity
 {
-    public Guid Id { get; set; }
 
     public string Name { get; set; }
     
